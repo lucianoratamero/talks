@@ -1,0 +1,25 @@
+.reveal .title-slide h1 {
+  line-height: 1;
+  text-align: left;
+}
+
+.reveal figure {
+  text-align: center;
+}
+
+.reveal img {
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0.4rem;
+}
+
+.reveal .small-img {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.reveal .social-icons svg {
+  fill: rgb(45, 102, 148);
+}
