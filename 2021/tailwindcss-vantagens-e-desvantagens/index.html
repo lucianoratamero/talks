@@ -4,9 +4,9 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Svelte: Capacitor vs Cordova</title>
+	<title>Tailwind CSS - Vantagens e desvantagens</title>
 
-	<meta name="description" content="Qual é a melhor ferramenta pra desenvolvimento mobile 100% Svelte? Chega mais!">
+	<meta name="description" content="Quer saber quando usar o Tailwind CSS e quais são os prós e contras? Chega mais!">
 	<meta name="author" content="Luciano Ratamero">
 
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="../../static/shared/dist/reveal.css">
 	<link rel="stylesheet" href="../../static/shared/dist/theme/hoshi.css" id="theme">
 
-	<link rel="stylesheet" href="../../static/shared//hoshi-slides/custom.css">
+	<link rel="stylesheet" href="../../static/shared/hoshi-slides/custom.css">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap"
@@ -38,7 +38,7 @@
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 			<section class="title-slide">
-				<h1><mark>Svelte para apps:<br />Cordova vs Capacitor</mark></h1>
+				<h1><mark>Tailwind CSS:<br />vantagens e desvantagens</mark></h1>
 			</section>
 
 			<section>
@@ -90,62 +90,97 @@
 			</section>
 
 			<section>
-				<h2><mark>Cordova e Capacitor: o que são?</mark></h2>
-				<p>frameworks para desenvolvimento de apps multiplataforma</p>
-				<p>permitem uso de ferramentas web</p>
-				<p>servem como interface entre js e funcionalidades de dispositivos</p>
+				<h2><mark>Tailwind CSS: o que é?</mark></h2>
+				<p>framework CSS para desenvolvimento de interfaces web</p>
+				<p>orientado a classes utilitárias</p>
+				<p>promete trazer benefícios que "boas práticas" não conseguem aplicar</p>
 			</section>
 
 			<section>
-				<h2><mark>Por que não <code>svelte-native</code>?</mark></h2>
-				<p>apesar do nome, você não pode usar código HTML no <code>svelte-native</code></p>
-				<p>suporte a estilos é limitada</p>
-				<p>compila para código nativo, não para HTML, CSS e JS</p>
+				<h2><mark>Vantagens</mark></h2>
 			</section>
 
 			<section data-auto-animate>
-				<h2><mark>Cordova: o pioneiro</mark></h2>
-				<p>lançado em 2009</p>
-				<p>antigo PhoneGap</p>
-				<p>base para quase todos os projetos parecidos</p>
+				<h2><mark>todos os benefícios da orientação a utilitários:</mark></h2>
+				<p>zero CSS duplicado</p>
+				<p>fácil manutenção dos estilos não usados (usando purgecss)</p>
+				<p>estilos padronizados e facilmente replicáveis</p>
 			</section>
 
 			<section data-auto-animate>
-				<h2><mark>Capacitor: o inovador</mark></h2>
-				<p>lançado em 2019</p>
-				<p>focado em oferecer APIs mais modernas</p>
-				<p>projeto feito pelo time do <code>ionic</code></p>
+				<h2><mark>prototipação veloz</mark></h2>
+				<p>perfeito pra estruturas que usam HMR</p>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>ótima documentação</mark></h2>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>pouco CSS indo pra produção</mark></h2>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>baixa especificidade de seletores</mark></h2>
+				<p>por todas as classes terem a mesma prioridade, sobrescrever estilos é fácil, mesmo que esses casos sejam raros</p>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>pilhas inclusas</mark></h2>
+				<p>paleta de cores, tipografia, responsividade e várias outras coisas já embutidas</p>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>configurável e extensível</mark></h2>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>não requer SASS ou alternativas</mark></h2>
 			</section>
 
 			<section>
-				<h2><mark>Hora do código:</mark></h2>
-				<p><a href="https://github.com/lucianoratamero/sample-orbit-svelte-cordova" target="_blank" rel="noopener noreferrer">https://github.com/lucianoratamero/sample-orbit-svelte-cordova</a></p>
-				<p><a href="https://github.com/lucianoratamero/sample-orbit-svelte-capacitor" target="_blank" rel="noopener noreferrer">https://github.com/lucianoratamero/sample-orbit-svelte-capacitor</a></p>
+				<h2><mark>Desvantagens</mark></h2>
 			</section>
 
 			<section data-auto-animate>
-				<h2><mark>Resumo do Cordova</mark></h2>
-				<p>é uma ferramenta mais "baixo nível", para pessoas mais experientes</p>
-				<p>chato de configurar, e não deixa de ser chato nunca</p>
-				<p>a compatibilidade foi bem fraca, praticamente não existente pra web</p>
-				<p>documentação mais extensa do que a do Capacitor, mas mais difícil de entender e pobre de exemplos</p>
+				<h2><mark>stack node</mark></h2>
+				<p>por conta de ser da stack node, é um pouco chato de integrar com frameworks fullstack</p>
 			</section>
 
 			<section data-auto-animate>
-				<h2><mark>Resumo do Capacitor</mark></h2>
-				<p>me pareceu ser melhor que o Cordova em todos os sentidos</p>
-				<p>fácil de configurar, com boas mensagens de erro</p>
-				<p>dá muita funcionalidade sem precisar instalar nada</p>
-				<p>compatiblilidade além das expectativas</p>
-				<p>o projeto <code>svelte-capacitor</code> funciona, mas é bem novo e precisa de contribuições</p>
+				<h2><mark>legibilidade no HTML</mark></h2>
+				<p>geralmente você tem que colocar várias classes pra interface ficar como você quer</p>
+				<p>isso pode gerar falta de semântica, ou até inconsistências visuais, dependendo de como for usado</p>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>mais uma ferramenta pra aprender</mark></h2>
+				<p>decorar as classes demora um tempo</p>
+				<p>eu, que usei poucas vezes, sempre tô com a documentação aberta do lado</p>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>componentização um pouco mais complicada</mark></h2>
+				<p>mas não é nada que um framework não resolva</p>
+				<p>o Tailwind também tem formas de usar que facilitam a criação de classes semânticas, se achar necessário</p>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>abordagem diferente de outros frameworks CSS</mark></h2>
+				<p>por conta de ele ser orientado a classes utilitárias, quem veio de um Bootstrap da vida vai se sentir um pouco de confusão</p>
+				<p>não vem com componentes complexos embutidos, apesar de eles não serem muito necessários</p>
+			</section>
+
+			<section data-auto-animate>
+				<h2><mark>todos os malefícios de um framework:</mark></h2>
+				<p>pessoas devs novas vão ter menos contato com o CSS, o que pode gerar um ponto cego no aprendizado</p>
+				<p>apesar de eu não ter achado ainda, todo framework tem suas limitações. provavelmente vai chegar um momento em que você vai ter que trabalhar "por fora" do framework</p>
 			</section>
 
 			<section>
 				<h2><mark>Referências</mark></h2>
-				<p><a href="https://cordova.apache.org/" target="_blank" rel="noopener noreferrer">Cordova</a></p>
-				<p><a href="https://capacitorjs.com/" target="_blank" rel="noopener noreferrer">Capacitor</a></p>
-				<p><a href="https://github.com/syonip/svelte-cordova" target="_blank" rel="noopener noreferrer"><code>svelte-cordova</code></a></p>
-				<p><a href="https://github.com/drannex42/svelte-capacitor" target="_blank" rel="noopener noreferrer"><code>svelte-capacitor</code></a></p>
+				<p><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS</a></p>
+				<p><a href="https://github.com/svelte-add/tailwindcss/" target="_blank" rel="noopener noreferrer">Svelte Tailwind Adder</a></p>
 			</section>
 
 			<section>
