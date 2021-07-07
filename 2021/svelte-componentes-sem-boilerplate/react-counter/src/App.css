@@ -1,0 +1,26 @@
+label,
+p,
+input,
+button,
+ul {
+  font-size: 3rem;
+}
+
+label,
+ul {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  text-align: center;
+}
+
+ul {
+  align-items: center;
+  flex-direction: column;
+}
+
+li {
+  cursor: pointer;
+}
