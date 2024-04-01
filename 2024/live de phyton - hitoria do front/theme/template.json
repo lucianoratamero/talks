@@ -1,0 +1,11 @@
+{
+  "Name": "Base + Light Code",
+  "Version": 0.1,
+  "Author": "iA + Luciano Ratamero",
+  "ShortDescription": "I really don't love...",
+  "LongDescription": "...the original description.",
+  "Css": "sanfrancisco.css",
+  "TitleFont": "San Francisco",
+  "BodyFont": "JetBrainsMono Nerd Font Mono",
+  "CssClasses": "variable-size-headings"
+}
