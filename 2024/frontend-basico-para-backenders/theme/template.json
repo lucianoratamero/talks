@@ -1,0 +1,9 @@
+{
+  "BodyFont": "November",
+  "Author": "Luciano Ratamero",
+  "Description": "Lincoln Loop's unofficial theme",
+  "Version": 1,
+  "Name": "LL",
+  "Css": "ll.css",
+  "TitleFont": "October"
+}

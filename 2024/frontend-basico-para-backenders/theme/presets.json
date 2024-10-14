@@ -1,0 +1,62 @@
+{
+  "Presets": [
+    {
+      "Name": "Default",
+      "TitleFont": "October",
+      "BodyFont": "November",
+      "Appearance": "light",
+      "DarkBodyTextColor": "#000000",
+      "LightBodyTextColor": "#000000",
+      "DarkTitleTextColor": "#000000",
+      "LightTitleTextColor": "#000000",
+      "DarkBackgroundColor": "transparent",
+      "LightBackgroundColor": "transparent",
+      "LightBgGradient": [
+        "#eff9fb",
+        "#eaf7fa",
+        "#e5f5f9",
+        "#e0f3f8",
+        "#dbf1f7",
+        "#d6eff6",
+        "#d1edf5",
+        "#ccebf4",
+        "#c7e9f3",
+        "#c2e7f2",
+        "#bde5f1",
+        "#b8e3f0",
+        "#b3e1ef",
+        "#aedfed",
+        "#a9dded",
+        "#a4dbec",
+        "#9fd9eb",
+        "#9ad7ea",
+        "#95d5e9",
+        "#b3dce9"
+      ],
+      "DarkBgGradient": [
+        "#eff9fb",
+        "#eaf7fa",
+        "#e5f5f9",
+        "#e0f3f8",
+        "#dbf1f7",
+        "#d6eff6",
+        "#d1edf5",
+        "#ccebf4",
+        "#c7e9f3",
+        "#c2e7f2",
+        "#bde5f1",
+        "#b8e3f0",
+        "#b3e1ef",
+        "#aedfed",
+        "#a9dded",
+        "#a4dbec",
+        "#9fd9eb",
+        "#9ad7ea",
+        "#95d5e9",
+        "#b3dce9"
+      ],
+      "DarkAccent1": "#000000",
+      "LightAccent1": "#000000"
+    }
+  ]
+}
