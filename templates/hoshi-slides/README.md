@@ -2,7 +2,14 @@
 
 The reveal.js setup from the 2021 talks: hoshi theme (gradient `<mark>` headings), a title slide,
 an "Olá :]" slide with photo, age and social links, and an "Obrigado! :]" slide. Everything it loads lives
-in `static/shared/` (reveal 4.1.0, the theme, `hoshi-slides/custom.css`, `eu.jpg`).
+in `static/shared/`: the theme, `hoshi-slides/custom.css`, `eu.jpg`, and in `vendor/` (each folder has its
+LICENSE) reveal.js 6.0.2 (its highlight plugin bundles highlight.js 11.11.1), the highlight.js 11.12.0
+`tomorrow-night-bright` color theme, and `highlightjs-svelte` 1.0.6 for ```` ```svelte ```` blocks.
+The 2021 talks still load reveal 4.1.0 from `static/shared/dist` and `static/shared/plugin`; leave those alone.
+
+To upgrade reveal later: `npm pack reveal.js@<version>`, copy `dist/{reveal.js,reveal.css,reset.css}` and the
+five plugins the template loads from `dist/plugin/` into a new `vendor/reveal.js-<version>/`, and point the
+template's paths at it (old built talks keep the old folder until rebuilt).
 
 Text is set in Allo (bold headings and bold text, regular elsewhere) and code in JetBrainsMono Nerd Font.
 Both are self-hosted by `static/shared/hoshi-slides/template.css` from the files in `fonts/` (SIL OFL, see the
@@ -72,7 +79,7 @@ Rendered in the browser by reveal's markdown plugin (marked). Inline HTML works.
 | Speaker notes (press `S`) | a line starting with `Note:`; everything after it on that slide is notes |
 | Reveal on next click | `point <!-- .element: class="fragment" -->` |
 | Slide attributes | `<!-- .slide: class="title-slide" data-background="#000" -->` |
-| Code with highlight | a fenced block with a language: ```` ```js ```` |
+| Code with highlight | a fenced block with a language: ```` ```js ````, ```` ```python ````, ```` ```svelte ```` … |
 | Step through code lines | ```` ```js [1\|2-3] ```` |
 | Image | `![alt](./media/pic.png)`, path relative to the talk folder |
 

@@ -16,15 +16,14 @@
 
   <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 
-  <link rel="stylesheet" href="../../static/shared/dist/reset.css">
-  <link rel="stylesheet" href="../../static/shared/dist/reveal.css">
+  <link rel="stylesheet" href="../../static/shared/vendor/reveal.js-6.0.2/dist/reset.css">
+  <link rel="stylesheet" href="../../static/shared/vendor/reveal.js-6.0.2/dist/reveal.css">
   <link rel="stylesheet" href="../../static/shared/dist/theme/hoshi.css" id="theme">
 
+  <!-- syntax highlighting theme; before our stylesheets so template.css can restyle code blocks -->
+  <link rel="stylesheet" href="../../static/shared/vendor/highlight.js-11.12.0/tomorrow-night-bright.css" id="highlight-theme">
   <link rel="stylesheet" href="../../static/shared/hoshi-slides/custom.css">
   <link rel="stylesheet" href="../../static/shared/hoshi-slides/template.css">
-
-  <!-- Theme used for syntax highlighting of code -->
-  <link rel="stylesheet" href="../../static/shared/plugin/highlight/tomorrow-night-bright.css" id="highlight-theme">
 </head>
 
 <body>
@@ -142,12 +141,15 @@
 
   </div>
 
-  <script src="../../static/shared/dist/reveal.js"></script>
-  <script src="../../static/shared/plugin/zoom/zoom.js"></script>
-  <script src="../../static/shared/plugin/notes/notes.js"></script>
-  <script src="../../static/shared/plugin/search/search.js"></script>
-  <script src="../../static/shared/plugin/markdown/markdown.js"></script>
-  <script src="../../static/shared/plugin/highlight/highlight.js"></script>
+  <script src="../../static/shared/vendor/reveal.js-6.0.2/dist/reveal.js"></script>
+  <script src="../../static/shared/vendor/reveal.js-6.0.2/dist/plugin/zoom.js"></script>
+  <script src="../../static/shared/vendor/reveal.js-6.0.2/dist/plugin/notes.js"></script>
+  <script src="../../static/shared/vendor/reveal.js-6.0.2/dist/plugin/search.js"></script>
+  <script src="../../static/shared/vendor/reveal.js-6.0.2/dist/plugin/markdown.js"></script>
+  <script src="../../static/shared/vendor/reveal.js-6.0.2/dist/plugin/highlight.js"></script>
+  <!-- highlightjs-svelte registers itself on a global hljs; hand it the instance the highlight plugin uses -->
+  <script>window.hljs = RevealHighlight().hljs;</script>
+  <script src="../../static/shared/vendor/highlightjs-svelte-1.0.6/svelte.min.js"></script>
   <script>
 
     // Also available as an ES module, see:

@@ -86,3 +86,13 @@
 .reveal pre code {
   padding: 0.8em 1em;
 }
+
+/* reveal 6 core css colors the current slide's outline in overview mode (Esc) with this var; the 4.x-era
+   hoshi theme never sets it, so without this the outline disappears */
+.reveal {
+  --r-link-color: #2d6694;
+}
+
+html.dark .reveal {
+  --r-link-color: #5fa8e0;
+}
