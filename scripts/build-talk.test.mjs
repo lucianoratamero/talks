@@ -14,6 +14,12 @@ test('fills front matter, marks headings outside code, keeps slide markdown inta
   assert.throws(() => build(template, '## no front matter'), /front matter/);
 });
 
+test('a trailing .element comment on a heading goes in front of the <mark>, so it styles the heading', () => {
+  const html = build('<!-- slides:start --><!-- slides:end -->', '---\ntitle: t\n---\n## refs <!-- .element: class="align-center" -->\n### plain\n');
+  assert.match(html, /## &lt;!-- \.element: class="align-center" --> &lt;mark>refs&lt;\/mark>\n/);
+  assert.match(html, /### &lt;mark>plain&lt;\/mark>/);
+});
+
 test('theme defaults to light, accepts dark, rejects typos', () => {
   assert.equal(build('{{theme}}', '---\ntitle: t\n---\n'), 'light');
   assert.equal(build('{{theme}}', '---\ntheme: dark\n---\n'), 'dark');

@@ -90,7 +90,7 @@ Rendered in the browser by reveal's markdown plugin (marked). Inline HTML works.
 | Image | `![alt](./media/pic.png)`, path relative to the talk folder |
 | Image filling the rest of the slide | `<img class="r-stretch" src="./media/pic.png" alt="…">` on its own line (not `![]()`) |
 | Align a whole slide | `<!-- .slide: class="align-left" -->` (or `align-center`, which also centers list items, or `align-right`) |
-| Align one element | the same classes with `<!-- .element: class="align-right" -->` on its own line right after the paragraph/list; on a list, `align-left`/`align-right` move the whole list |
+| Align one element | the same classes with `<!-- .element: class="align-right" -->`: at the end of a heading line, or on its own line right after a paragraph/list; on a list, `align-left`/`align-right` move the whole list |
 | Huge text filling the width | `## big <!-- .element: class="r-fit-text" -->` |
 | Two columns | `<div class="r-hstack">` with one `<div>` per column; leave blank lines around the markdown inside each `<div>`. Columns get equal widths |
 | Animate between two slides | `<!-- .slide: data-auto-animate -->` on both; matching headings/text/images move |
@@ -103,6 +103,9 @@ revealjs.com (layout, auto-animate, backgrounds).
 
 Gotchas:
 - A line containing only `---` inside a code block still splits the slide.
+- An `.element` comment styles the element *before* it. Put it after the element (end of a heading line, or
+  its own line after a paragraph/list), never above: above, it lands on the whole slide. At the end of a
+  paragraph line it would land on the last link/`code` in that line, so use its own line there.
 - With the `concave` transition, the slides next to the current one (left/right and up/down) are kept flat
   while idle and only rotate during the transition (the template's script does it): Firefox cuts off part of the current
   slide whenever a neighbor sits rotated in 3D.

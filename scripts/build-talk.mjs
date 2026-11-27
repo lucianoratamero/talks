@@ -26,11 +26,14 @@ export function build(template, markdown) {
     if (!['all', 'step'].includes(meta[key])) throw new Error(`${key} must be "all" or "step", got "${meta[key]}"`);
   }
 
-  // hoshi's look is the gradient <mark> on headings; leave `# comments` inside code fences alone
+  // hoshi's look is the gradient <mark> on headings; leave `# comments` inside code fences alone. A trailing
+  // `.element` comment moves in front of the <mark>: reveal attaches it to the element before it, so inside the
+  // <mark> it would style the <mark>, while first in the heading it styles the heading itself
   let fenced = false;
   const slides = markdown.slice(frontMatter[0].length).split('\n').map((line) => {
     if (/^\s*(```|~~~)/.test(line)) fenced = !fenced;
-    return fenced ? line : line.replace(/^(#{1,6})\s+(.*\S)/, '$1 <mark>$2</mark>');
+    return fenced ? line : line.replace(/^(#{1,6})\s+(.*?)\s*(<!--\s*\.element\b.*?-->)?\s*$/,
+      (whole, hashes, text, comment) => (text ? `${hashes} ${comment ? `${comment} ` : ''}<mark>${text}</mark>` : whole));
   }).join('\n').trim(); // trim: the plugin strips the first line's indentation from every line
 
   // placeholders first, so `{{ }}` inside slides (django/vue code) is never touched

@@ -69,9 +69,9 @@ each click moves the highlight: line 1, then 2-4, then 3
 
 <!-- .slide: class="align-left" -->
 
-## left-aligned
+## left-aligned, except this heading <!-- .element: class="align-center" -->
 
-`class="align-left"` puts the heading, text and lists on the left
+`class="align-left"` on the slide puts text and lists on the left; the heading's own `align-center` wins
 
 - like this list
 
