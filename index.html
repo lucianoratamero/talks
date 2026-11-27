@@ -47,10 +47,11 @@
     .hero p { margin: 0 0 .5rem; }
     .hero .accent { color: var(--accent); }
     ol { list-style: none; margin: 0; padding: 0; }
-    li a { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 1rem; padding: 1rem 0; color: var(--title); font-size: 1.25rem; font-weight: 500; transition: color .15s; }
+    main h2 { margin: 2.5rem 0 0; font-size: 1.5rem; color: var(--accent); }
+    main h2:first-of-type { margin-top: 0; }
+    li a { display: block; padding: 1rem 0; color: var(--title); font-size: 1.25rem; font-weight: 500; transition: color .15s; }
     li a:hover, li a:focus-visible { color: var(--title-hover); }
     li small { display: block; font-size: 1rem; font-weight: 400; color: var(--muted); }
-    li time { color: var(--muted); font-size: 1.125rem; font-weight: 400; }
     footer { margin: 4rem auto 2rem; }
     footer hr { border: 0; border-top: 1px solid var(--rule); margin-bottom: 2rem; }
     footer a { color: var(--footer); margin-right: 1.5rem; }
@@ -69,29 +70,51 @@
   </header>
 
   <main class="container">
-    <!-- newest first: add new talks at the top -->
+    <!-- newest first: add new talks at the top of their year -->
+    <h2>2026</h2>
     <ol>
-      <li><a href="2026/lets-get-atomic/"><span>Let's get Atomic!</span><time>2026</time></a></li>
-      <li><a href="2026/frontends%20modernos%20com%20django-vite/"><span>frontends modernos com django-vite</span><time>2026</time></a></li>
-      <li><a href="2024/frontend-basico-para-backenders/"><span>Frontend básico para backenders</span><time>2024</time></a></li>
-      <li><a href="2024/live%20de%20python%20-%20historia%20do%20front/"><span>uma história opinionada sobre o frontend<small>Live de Python</small></span><time>2024</time></a></li>
-      <li><a href="2021/react-context-como-onde-quando/"><span>React Context - Como, onde, quando?</span><time>2021</time></a></li>
-      <li><a href="2021/svelte-componentes-sem-boilerplate/"><span>Svelte - Componentes sem boilerplate</span><time>2021</time></a></li>
-      <li><a href="2021/tailwindcss-vantagens-e-desvantagens/"><span>Tailwind CSS - Vantagens e desvantagens</span><time>2021</time></a></li>
-      <li><a href="2021/svelte-capacitor-vs-cordova/"><span>Svelte: Capacitor vs Cordova</span><time>2021</time></a></li>
-      <li><a href="2019/apaixonando-se%20por%20python/"><span>apaixonando-se por python</span><time>2019</time></a></li>
-      <li><a href="2018/pybr%20-%20Django%20-%20da%20requisi%C3%A7%C3%A3o%20%C3%A0%20resposta/"><span>Django - da requisição à resposta<small>Python Brasil</small></span><time>2018</time></a></li>
-      <li><a href="2018/Django%20-%20da%20requisi%C3%A7%C3%A3o%20%C3%A0%20resposta/"><span>Django - da requisição à resposta</span><time>2018</time></a></li>
-      <li><a href="2018/API%20Star%3A%20novo%20framework%20REST%20do%20criador%20do%20DRF/"><span>API Star: novo framework REST do criador do DRF</span><time>2018</time></a></li>
-      <li><a href="2018/python%20para%20desenvolvedores%20javascript/"><span>python para desenvolvedores javascript</span><time>2018</time></a></li>
-      <li><a href="2017/Django%20%2B%20React%3A%20dicas%20para%20quem%20quer%20fazer%20sua%20primeira%20app%20desacoplada/"><span>Django + React: dicas para quem quer fazer sua primeira app desacoplada</span><time>2017</time></a></li>
-      <li><a href="2017/como%20usar%20django%20nos%20tempos%20de%20angular%20e%20react/"><span>como usar django nos tempos de angular e react</span><time>2017</time></a></li>
-      <li><a href="2017/apistar%3A%20novo%20framework%20REST%20feito%20para%20python3/"><span>apistar: novo framework REST feito para python3</span><time>2017</time></a></li>
-      <li><a href="2017/apaixonando-se%20por%20python/"><span>Apaixonando-se por Python</span><time>2017</time></a></li>
-      <li><a href="2016/fazendo%20seu%20site%20-%20blog%20no%20Github%20Pages%20com%20Python%20e%20Lektor/"><span>fazendo seu site/blog no GitHub Pages com Python e Lektor</span><time>2016</time></a></li>
-      <li><a href="2016/introdu%C3%A7%C3%A3o%20ao%20domain%20driven%20design%20com%20django/"><span>introdução ao Domain Driven Design com Django</span><time>2016</time></a></li>
-      <li><a href="2015/tdc%20-%20poa%20-%20segregated%20dom/"><span>JS limpo e testável com Segregated DOM<small>TDC Porto Alegre</small></span><time>2015</time></a></li>
-      <li><a href="2015/tdc%20-%20poa%20-%20django-pipeline/"><span>django-pipeline<small>TDC Porto Alegre</small></span><time>2015</time></a></li>
+      <li><a href="2026/frontends%20modernos%20com%20django-vite/"><span>frontends modernos com django-vite</span></a></li>
+      <li><a href="2026/lets-get-atomic/"><span>Let's get Atomic!</span></a></li>
+    </ol>
+    <h2>2024</h2>
+    <ol>
+      <li><a href="2024/frontend-basico-para-backenders/"><span>Frontend básico para backenders</span></a></li>
+      <li><a href="2024/live%20de%20python%20-%20historia%20do%20front/"><span>uma história opinionada sobre o frontend<small>Live de Python</small></span></a></li>
+    </ol>
+    <h2>2021</h2>
+    <ol>
+      <li><a href="2021/react-context-como-onde-quando/"><span>React Context - Como, onde, quando?</span></a></li>
+      <li><a href="2021/svelte-componentes-sem-boilerplate/"><span>Svelte - Componentes sem boilerplate</span></a></li>
+      <li><a href="2021/tailwindcss-vantagens-e-desvantagens/"><span>Tailwind CSS - Vantagens e desvantagens</span></a></li>
+      <li><a href="2021/svelte-capacitor-vs-cordova/"><span>Svelte: Capacitor vs Cordova</span></a></li>
+    </ol>
+    <h2>2019</h2>
+    <ol>
+      <li><a href="2019/apaixonando-se%20por%20python/"><span>apaixonando-se por python</span></a></li>
+    </ol>
+    <h2>2018</h2>
+    <ol>
+      <li><a href="2018/pybr%20-%20Django%20-%20da%20requisi%C3%A7%C3%A3o%20%C3%A0%20resposta/"><span>Django - da requisição à resposta<small>Python Brasil</small></span></a></li>
+      <li><a href="2018/Django%20-%20da%20requisi%C3%A7%C3%A3o%20%C3%A0%20resposta/"><span>Django - da requisição à resposta</span></a></li>
+      <li><a href="2018/API%20Star%3A%20novo%20framework%20REST%20do%20criador%20do%20DRF/"><span>API Star: novo framework REST do criador do DRF</span></a></li>
+      <li><a href="2018/python%20para%20desenvolvedores%20javascript/"><span>python para desenvolvedores javascript</span></a></li>
+    </ol>
+    <h2>2017</h2>
+    <ol>
+      <li><a href="2017/Django%20%2B%20React%3A%20dicas%20para%20quem%20quer%20fazer%20sua%20primeira%20app%20desacoplada/"><span>Django + React: dicas para quem quer fazer sua primeira app desacoplada</span></a></li>
+      <li><a href="2017/como%20usar%20django%20nos%20tempos%20de%20angular%20e%20react/"><span>como usar django nos tempos de angular e react</span></a></li>
+      <li><a href="2017/apistar%3A%20novo%20framework%20REST%20feito%20para%20python3/"><span>apistar: novo framework REST feito para python3</span></a></li>
+      <li><a href="2017/apaixonando-se%20por%20python/"><span>Apaixonando-se por Python</span></a></li>
+    </ol>
+    <h2>2016</h2>
+    <ol>
+      <li><a href="2016/fazendo%20seu%20site%20-%20blog%20no%20Github%20Pages%20com%20Python%20e%20Lektor/"><span>fazendo seu site/blog no GitHub Pages com Python e Lektor</span></a></li>
+      <li><a href="2016/introdu%C3%A7%C3%A3o%20ao%20domain%20driven%20design%20com%20django/"><span>introdução ao Domain Driven Design com Django</span></a></li>
+    </ol>
+    <h2>2015</h2>
+    <ol>
+      <li><a href="2015/tdc%20-%20poa%20-%20segregated%20dom/"><span>JS limpo e testável com Segregated DOM<small>TDC Porto Alegre</small></span></a></li>
+      <li><a href="2015/tdc%20-%20poa%20-%20django-pipeline/"><span>django-pipeline<small>TDC Porto Alegre</small></span></a></li>
     </ol>
   </main>
 
