@@ -75,7 +75,8 @@ lighter gradient so headings stay readable. Talks without `class="dark"` on `<ht
 ones) are unaffected; an old talk can opt in by adding that class by hand.
 
 While presenting, press `D` to flip between light and dark on the fly (it's also listed in reveal's
-`?` help overlay). The toggle isn't saved: a reload goes back to the front matter `theme`, and the
+`?` help overlay). Colors ease over 0.4s, the heading gradient included; change `--theme-transition` in
+`static/shared/hoshi-slides/template.css` to retime it. The toggle isn't saved: a reload goes back to the front matter `theme`, and the
 speaker notes window (`S`) keeps its own theme.
 
 ### Slides
