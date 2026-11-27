@@ -20,6 +20,13 @@ test('a trailing .element comment on a heading goes in front of the <mark>, so i
   assert.match(html, /### &lt;mark>plain&lt;\/mark>/);
 });
 
+test('no about (or an empty one) drops the about slide; with one it stays', () => {
+  const template = 'a\n  <!-- about:start x -->\n<p>{{about}}, {{age}}</p>\n<!-- about:end -->\nb';
+  assert.equal(build(template, '---\ntitle: t\n---\n'), 'a\nb');
+  assert.equal(build(template, '---\nabout:\n---\n'), 'a\nb');
+  assert.match(build(template, '---\nabout: dev\nage: 31\n---\n'), /<p>dev, 31<\/p>/);
+});
+
 test('theme defaults to light, accepts dark, rejects typos', () => {
   assert.equal(build('{{theme}}', '---\ntitle: t\n---\n'), 'light');
   assert.equal(build('{{theme}}', '---\ntheme: dark\n---\n'), 'dark');

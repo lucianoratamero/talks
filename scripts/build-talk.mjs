@@ -13,7 +13,7 @@ export const ageOn = (date) => date.getFullYear() - 1989 - (date >= new Date(dat
 
 export function build(template, markdown) {
   const frontMatter = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
-  if (!frontMatter) throw new Error('markdown must start with a --- front matter block (title, description, about)');
+  if (!frontMatter) throw new Error('markdown must start with a --- front matter block (title, description)');
   const meta = {
     theme: 'light', // optional, so markdown written before dark mode existed still builds
     bullets: 'all', // `step` reveals list items one per click
@@ -36,8 +36,11 @@ export function build(template, markdown) {
       (whole, hashes, text, comment) => (text ? `${hashes} ${comment ? `${comment} ` : ''}<mark>${text}</mark>` : whole));
   }).join('\n').trim(); // trim: the plugin strips the first line's indentation from every line
 
+  // no `about` (or an empty one) drops the "Olá" slide, before placeholders, so its own don't count as missing
+  const page = meta.about ? template : template.replace(/[ \t]*<!-- about:start[\s\S]*?<!-- about:end -->\n?/, '');
+
   // placeholders first, so `{{ }}` inside slides (django/vue code) is never touched
-  return template
+  return page
     .replace(/\{\{(\w+)\}\}/g, (_, key) => {
       if (!(key in meta)) throw new Error(`front matter is missing "${key}"`);
       return escapeHtml(meta[key]);

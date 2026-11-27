@@ -54,7 +54,8 @@ theme: dark
 
 - `title` (required): the page `<title>` and the title slide
 - `description` (required): `<meta name="description">`
-- `about` (required): the line under your name on the "Olá :]" slide
+- `about` (optional): the line under your name on the "Olá :]" slide. Leave it out (or empty) to skip the
+  "Olá :]" slide altogether
 - `theme` (optional): `light` (default) or `dark`. Anything else is a build error.
 - `bullets` (optional): `all` (default, a list shows at once) or `step` (every list item in the talk
   appears on its own click). Anything else is a build error.
@@ -125,7 +126,8 @@ cp -r templates/hoshi-slides 2026/my-talk
 rm 2026/my-talk/README.md 2026/my-talk/example.md
 ```
 
-Replace `{{title}}`, `{{description}}`, `{{about}}`, `{{age}}` and `{{theme}}` (`light` or `dark`) in `index.html`, then write `<section>`s between
+Replace `{{title}}`, `{{description}}`, `{{about}}`, `{{age}}` and `{{theme}}` (`light` or `dark`) in `index.html` (or delete
+the "Olá :]" slide between the `about:` markers), then write `<section>`s between
 `<!-- slides:start -->` and `<!-- slides:end -->`. The sample slides there show the hoshi conventions:
 headings wrapped in `<mark>`, `class="fragment"`, `<aside class="notes">`, and
 `<pre><code class="language-js" data-trim data-noescape>`.
