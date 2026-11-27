@@ -38,7 +38,7 @@ antes de tudo...
 ## eu <3 django
 
 ---
-<!-- .slide: data-auto-animate data-background-image="../../static/shared/hoshi-slides/pybr.jpg" data-background-opacity="0.15" -->
+<!-- .slide: data-auto-animate data-theme="dark" data-background-image="../../static/shared/hoshi-slides/pybr.jpg" data-background-opacity="0.15" -->
 
 e também...
 

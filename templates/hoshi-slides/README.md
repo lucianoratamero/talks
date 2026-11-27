@@ -70,14 +70,19 @@ theme: dark
   build (birthday is in `ageOn` in `scripts/build-talk.mjs`), so rebuilding a talk a year later bumps it.
   Set it to pin the age you had when you gave the talk.
 
-Dark mode is a set of `html.dark` rules at the end of `static/shared/hoshi-slides/custom.css`; headings keep
-the same gradient as in light mode. Talks without `class="dark"` on `<html>` (all the older
+Dark mode is a set of `html.dark` rules at the end of `static/shared/hoshi-slides/custom.css`, with a
+brighter heading gradient so it stays readable. Talks without `class="dark"` on `<html>` (all the older
 ones) are unaffected; an old talk can opt in by adding that class by hand.
 
 While presenting, press `D` to flip between light and dark on the fly (it's also listed in reveal's
-`?` help overlay). Colors ease over 0.4s; change `--theme-transition` in
+`?` help overlay). Colors ease over 0.4s (the heading gradient switches at once); change `--theme-transition` in
 `static/shared/hoshi-slides/template.css` to retime it. The toggle isn't saved: a reload goes back to the front matter `theme`, and the
 speaker notes window (`S`) keeps its own theme.
+
+A slide can force a theme with `<!-- .slide: data-theme="dark" -->` (or `"light"`): the page switches when you
+reach it, with the same easing, and goes back to the talk's theme on the next slide. `D` on a forced slide flips
+the talk's theme for the other slides. It's page-wide, so during the transition the outgoing slide changes too,
+and the overview (`O`) shows every slide in the current slide's theme.
 
 ### Slides
 
@@ -104,6 +109,7 @@ Rendered in the browser by reveal's markdown plugin (marked). Inline HTML works.
 | Two columns | `<div class="r-hstack">` with one `<div>` per column; leave blank lines around the markdown inside each `<div>`. Columns get equal widths |
 | Animate between two slides | `<!-- .slide: data-auto-animate -->` on both; identical headings/text/images move, and text that changes morphs (e.g. `## I <3 django` → `## I <3 python`: "I <3" glides, only the last word crossfades) |
 | Background image | `<!-- .slide: data-background-image="./media/pic.png" data-background-opacity="0.15" -->` |
+| Force dark/light on one slide | `<!-- .slide: data-theme="dark" -->` (or `"light"`); see Front matter above |
 | Table | a normal markdown table (`\| a \| b \|` rows, `\| --- \| --- \|` under the header) |
 
 `example.md` has a slide for each of these (except plain images and slide attributes), and a vertical stack. The `align-*`

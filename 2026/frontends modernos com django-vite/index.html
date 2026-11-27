@@ -75,7 +75,7 @@ antes de tudo...
 ## &lt;mark>eu &lt;3 django&lt;/mark>
 
 ---
-&lt;!-- .slide: data-auto-animate data-background-image="../../static/shared/hoshi-slides/pybr.jpg" data-background-opacity="0.15" -->
+&lt;!-- .slide: data-auto-animate data-theme="dark" data-background-image="../../static/shared/hoshi-slides/pybr.jpg" data-background-opacity="0.15" -->
 
 e também...
 
@@ -264,9 +264,17 @@ mas e se eu te dissesse que
       plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
     });
 
-    // D flips light/dark on the fly (the dark styles hang off html.dark); listed in the ? help overlay
+    // the dark styles hang off html.dark. <!-- .slide: data-theme="dark" --> (or "light") forces a theme while
+    // that slide shows; every other slide uses the talk's theme (front matter), which D flips on the fly
+    // (listed in the ? help overlay)
+    let theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const applyTheme = () => document.documentElement.classList.toggle('dark',
+      (Reveal.getCurrentSlide()?.dataset.theme || theme) === 'dark');
+    Reveal.on('ready', applyTheme);
+    Reveal.on('slidechanged', applyTheme);
     Reveal.addKeyBinding({ keyCode: 68, key: 'D', description: 'Toggle dark mode' }, () => {
-      document.documentElement.classList.toggle('dark');
+      theme = theme === 'dark' ? 'light' : 'dark';
+      applyTheme();
     });
 
     // `bullets: step` / `paragraphs: step` (whole talk, markdown slides only, so the Olá/Obrigado slides stay

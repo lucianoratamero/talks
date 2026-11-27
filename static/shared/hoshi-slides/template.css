@@ -210,7 +210,7 @@ html:not(.reveal-print) .reveal.concave:not(.overview) .slides > section > secti
   border-radius: 0.25em;
 }
 
-/* theme toggle (D): ease colors instead of snapping (the heading gradient is the same in both themes). Only
+/* theme toggle (D): ease colors instead of snapping (not the heading gradient: a gradient can't transition). Only
    elements reveal doesn't animate itself (its controls, progress fill and fragments keep their own
    transitions). Change the timing here: */
 .reveal-viewport {
