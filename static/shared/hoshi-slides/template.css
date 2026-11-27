@@ -119,3 +119,51 @@
 html.dark .reveal {
   --r-link-color: #5fa8e0;
 }
+
+/* alignment helpers: align-left / align-center / align-right, on a whole slide (<!-- .slide: class="…" -->)
+   or on one element (<!-- .element: class="…" --> on its own line right after the block) */
+.reveal .align-left {
+  text-align: left;
+}
+
+.reveal .align-center {
+  text-align: center;
+}
+
+.reveal .align-right {
+  text-align: right;
+}
+
+/* the theme makes a list a left-aligned block that sits centered. align-center (slide or list) centers the
+   items themselves; align-left/right on a list moves the whole block to that side */
+.reveal .align-center ul,
+.reveal .align-center ol,
+.reveal ul.align-center,
+.reveal ol.align-center {
+  margin-left: 0;
+  text-align: center;
+  list-style-position: inside;
+}
+
+.reveal ul.align-left,
+.reveal ol.align-left,
+.reveal ul.align-right,
+.reveal ol.align-right {
+  display: block;
+}
+
+.reveal ul.align-right,
+.reveal ol.align-right {
+  list-style-position: inside;
+}
+
+/* columns: reveal's r-hstack doesn't size its children, so a code column shrinks to its content and clips;
+   give every column an equal share and some room between them */
+.reveal .r-hstack {
+  gap: 1em;
+}
+
+.reveal .r-hstack > * {
+  flex: 1;
+  min-width: 0;
+}

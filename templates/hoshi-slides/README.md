@@ -79,7 +79,7 @@ Rendered in the browser by reveal's markdown plugin (marked). Inline HTML works.
 | --- | --- |
 | New slide | a line with only `---` |
 | Heading with the hoshi gradient | `## heading` (every `#` heading gets `<mark>` automatically) |
-| Speaker notes (press `S`) | a line starting with `Note:`; everything after it on that slide is notes |
+| Speaker notes (press `S`) | a line starting with `Note:`; everything after it until the next `---` is notes, and markdown (lists, **bold**, `code`) works there |
 | Reveal on next click | `point <!-- .element: class="fragment" -->` (styles: `fragment fade-up`, `fade-in-then-out`, … see revealjs.com/fragments) |
 | Bullets one per click, whole talk | `bullets: step` in the front matter |
 | Paragraphs one per click, whole talk | `paragraphs: step` in the front matter |
@@ -88,8 +88,18 @@ Rendered in the browser by reveal's markdown plugin (marked). Inline HTML works.
 | Code with highlight | a fenced block with a language: ```` ```js ````, ```` ```python ````, ```` ```svelte ```` … |
 | Step through code lines | ```` ```js [1\|2-4\|3] ```` highlights line 1, then 2-4, then 3, one per click |
 | Image | `![alt](./media/pic.png)`, path relative to the talk folder |
+| Image filling the rest of the slide | `<img class="r-stretch" src="./media/pic.png" alt="…">` on its own line (not `![]()`) |
+| Align a whole slide | `<!-- .slide: class="align-left" -->` (or `align-center`, which also centers list items, or `align-right`) |
+| Align one element | the same classes with `<!-- .element: class="align-right" -->` on its own line right after the paragraph/list; on a list, `align-left`/`align-right` move the whole list |
+| Huge text filling the width | `## big <!-- .element: class="r-fit-text" -->` |
+| Two columns | `<div class="r-hstack">` with one `<div>` per column; leave blank lines around the markdown inside each `<div>`. Columns get equal widths |
+| Animate between two slides | `<!-- .slide: data-auto-animate -->` on both; matching headings/text/images move |
+| Background image | `<!-- .slide: data-background-image="./media/pic.png" data-background-opacity="0.15" -->` |
+| Table | a normal markdown table (`\| a \| b \|` rows, `\| --- \| --- \|` under the header) |
 
-`example.md` has a slide for each of the "step" rows.
+`example.md` has a slide for each of these (except plain images and slide attributes). The `align-*`
+classes and the equal-width columns are ours (`template.css`); the rest is reveal.js, documented at
+revealjs.com (layout, auto-animate, backgrounds).
 
 Gotchas:
 - A line containing only `---` inside a code block still splits the slide.

@@ -7,13 +7,17 @@ bullets: all
 paragraphs: all
 ---
 
-## section title
+## speaker notes
 
-first point
+press `S` to open the speaker view: everything after `Note:` shows there, not on the slide
 
-point revealed on next step <!-- .element: class="fragment" -->
+Note:
+These are the notes for this slide. They can span several lines and use markdown:
 
-Note: speaker notes, press S to see them
+- **remember** to mention the demo
+- the timer and the next slide are in the speaker view too
+
+Everything up to the next `---` is part of the notes.
 
 ---
 
@@ -50,6 +54,111 @@ for (const item of items) {
 ```
 
 each click moves the highlight: line 1, then 2-4, then 3
+
+---
+
+<!-- .slide: class="align-center" -->
+
+## everything centered
+
+- `class="align-center"` on the slide
+- centers list items too
+- by default a list is a left-aligned block
+
+---
+
+<!-- .slide: class="align-left" -->
+
+## left-aligned
+
+`class="align-left"` puts the heading, text and lists on the left
+
+- like this list
+
+---
+
+## aligning one element
+
+this paragraph goes left
+
+<!-- .element: class="align-left" -->
+
+this one goes right, [links](https://example.com) and all
+
+<!-- .element: class="align-right" -->
+
+- and this whole list
+- sits on the left
+
+<!-- .element: class="align-left" -->
+
+---
+
+## make it big <!-- .element: class="r-fit-text" -->
+
+`r-fit-text` grows the text to fill the slide's width
+
+---
+
+## images
+
+<img class="r-stretch" src="../../static/shared/hoshi-slides/eu.jpg" alt="Luciano">
+
+`r-stretch` fills the rest of the slide (needs an `<img>` tag on its own line)
+
+---
+
+## two columns
+
+<div class="r-hstack">
+<div>
+
+- text on the left
+- code on the right
+- blank lines around the markdown inside each `<div>`
+
+</div>
+<div>
+
+```python
+def hello(name):
+    return f"olá, {name}!"
+```
+
+</div>
+</div>
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+## auto-animate
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+## auto-animate
+
+on two slides in a row marked `data-auto-animate`, matching elements move between them
+
+---
+
+<!-- .slide: data-background-image="../../static/shared/hoshi-slides/eu.jpg" data-background-opacity="0.15" -->
+
+## background image
+
+`data-background-image`, faded with `data-background-opacity`
+
+---
+
+## tables
+
+| you want | front matter |
+| --- | --- |
+| dark mode | `theme: dark` |
+| bullets one per click | `bullets: step` |
+| paragraphs one per click | `paragraphs: step` |
 
 ---
 
