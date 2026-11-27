@@ -144,6 +144,20 @@ on two slides in a row marked `data-auto-animate`, matching elements move betwee
 
 ---
 
+<!-- .slide: data-auto-animate -->
+
+## I <3 django
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+## I <3 python
+
+text that changes morphs: the shared "I <3" glides, only the last word turns
+
+---
+
 <!-- .slide: data-background-image="../../static/shared/hoshi-slides/eu.jpg" data-background-opacity="0.15" -->
 
 ## background image

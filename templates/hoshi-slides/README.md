@@ -94,7 +94,7 @@ Rendered in the browser by reveal's markdown plugin (marked). Inline HTML works.
 | Align one element | the same classes with `<!-- .element: class="align-right" -->`: at the end of a heading line, or on its own line right after a paragraph/list; on a list, `align-left`/`align-right` move the whole list |
 | Huge text filling the width | `## big <!-- .element: class="r-fit-text" -->` |
 | Two columns | `<div class="r-hstack">` with one `<div>` per column; leave blank lines around the markdown inside each `<div>`. Columns get equal widths |
-| Animate between two slides | `<!-- .slide: data-auto-animate -->` on both; matching headings/text/images move |
+| Animate between two slides | `<!-- .slide: data-auto-animate -->` on both; identical headings/text/images move, and text that changes morphs (e.g. `## I <3 django` → `## I <3 python`: "I <3" glides, only the last word crossfades) |
 | Background image | `<!-- .slide: data-background-image="./media/pic.png" data-background-opacity="0.15" -->` |
 | Table | a normal markdown table (`\| a \| b \|` rows, `\| --- \| --- \|` under the header) |
 

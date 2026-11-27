@@ -208,6 +208,71 @@
       clearTimeout(parkLater);
       parkLater = setTimeout(park, duration + 200); // after the transition, never during it
     });
+
+    // auto-animate: reveal moves elements whose text is the same on both slides and fades in the new ones, but
+    // old text just vanishes. For each old element whose text changed, fade out a copy where it was, and pair it
+    // with the new element of the same tag: both slide between their spots, lined up on the text they share
+    // (start, end, or else center). "eu <3 django" -> "eu <3 python" then glides "eu <3" and turns only the word
+    const changed = (slide, otherTexts, otherSlide) => [...slide.children].filter((el) =>
+      !el.matches('aside, script, style, .aa-ghost') && !otherTexts.has(el.textContent)
+      && !(el.dataset.id && otherSlide.querySelector(`[data-id="${el.dataset.id}"]`))); // reveal moves those
+    const sharedLength = (a, b) => { let i = 0; while (i < a.length && a[i] === b[i]) i++; return i; };
+    const textLines = (el) => {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const rects = [...range.getClientRects()].filter((r) => r.width);
+      return { left: rects[0].left, top: rects[0].top, right: rects.at(-1).right };
+    };
+    Reveal.on('autoanimate', ({ fromSlide, toSlide }) => {
+      toSlide.querySelectorAll(':scope > .aa-ghost').forEach((g) => g.remove());
+      const config = Reveal.getConfig();
+      const duration = 1000 * Number(toSlide.dataset.autoAnimateDuration ?? config.autoAnimateDuration);
+      const animation = { duration, easing: config.autoAnimateEasing, fill: 'forwards' };
+      const oldTexts = new Set([...fromSlide.children].map((el) => el.textContent));
+      const newTexts = new Set([...toSlide.children].map((el) => el.textContent));
+      const arrivals = changed(toSlide, oldTexts, fromSlide);
+      for (const el of changed(fromSlide, newTexts, toSlide)) {
+        const ghost = el.cloneNode(true);
+        ghost.classList.add('aa-ghost');
+        ghost.setAttribute('aria-hidden', 'true');
+        for (const node of [ghost, ...ghost.querySelectorAll('*')]) {
+          node.removeAttribute('data-auto-animate-target');
+          node.removeAttribute('data-id');
+          // keep shown fragments shown and hidden ones hidden (but still taking their space)
+          if (node.classList.contains('fragment')) {
+            if (!node.classList.contains('visible')) node.style.visibility = 'hidden';
+            node.classList.remove('fragment', 'visible', 'current-fragment');
+          }
+        }
+        Object.assign(ghost.style, {
+          position: 'absolute',
+          margin: '0',
+          left: `${el.offsetLeft + fromSlide.offsetLeft - toSlide.offsetLeft}px`,
+          top: `${el.offsetTop + fromSlide.offsetTop - toSlide.offsetTop}px`,
+          width: `${el.offsetWidth}px`,
+          textAlign: getComputedStyle(el).textAlign,
+          pointerEvents: 'none',
+        });
+        toSlide.append(ghost);
+        let move = 'none';
+        const pair = arrivals.findIndex((other) => other.tagName === el.tagName);
+        if (pair !== -1) {
+          const [arrival] = arrivals.splice(pair, 1);
+          const [a, b] = [textLines(ghost), textLines(arrival)];
+          const [from, to] = [el.textContent.trim(), arrival.textContent.trim()];
+          const [start, end] = [sharedLength(from, to), sharedLength([...from].reverse(), [...to].reverse())];
+          const dx = start && start >= end ? b.left - a.left : end ? b.right - a.right : (b.left + b.right - a.left - a.right) / 2;
+          const scale = Reveal.getScale();
+          const [x, y] = [dx / scale, (b.top - a.top) / scale].map((n) => Number(n.toFixed(2)));
+          move = `translate(${x}px, ${y}px)`;
+          // no fill: once done, the element's own CSS transforms (e.g. fragment styles) apply again
+          arrival.animate([{ transform: `translate(${-x}px, ${-y}px)` }, { transform: 'none' }], { duration, easing: animation.easing });
+        }
+        ghost.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: move }], animation)
+          .onfinish = () => ghost.remove();
+      }
+    });
+
   </script>
 
 </body>
