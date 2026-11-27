@@ -167,3 +167,10 @@ html.dark .reveal {
   flex: 1;
   min-width: 0;
 }
+
+/* a URL or long inline code is one unbreakable word; let it break anywhere instead of running out of its
+   column or off the slide */
+.reveal a,
+.reveal code:not(pre code, mark code) {
+  overflow-wrap: anywhere;
+}
