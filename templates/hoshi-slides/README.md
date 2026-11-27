@@ -22,11 +22,17 @@ There are two ways to start a talk from it.
 ## Option 1: write it in markdown (recommended)
 
 ```sh
+npm install   # once: the build uses the `qrcode` package
 mkdir 2026/my-talk
 cp templates/hoshi-slides/example.md 2026/my-talk/slides.md
 npm run build:talk -- 2026/my-talk/slides.md   # writes 2026/my-talk/index.html once
 npm run watch:talk -- 2026/my-talk/slides.md   # same, then rebuilds on every save (ctrl+c to stop)
 ```
+
+The last slide gets a QR code of the talk's published URL: `SITE` in `scripts/build-talk.mjs` (the GitHub
+Pages address) plus the talk's folder, e.g. `2026/my-talk/`. It's an SVG inside the page, so it works
+offline, and it's always dark on white (some phones can't read inverted codes). A talk outside the repo
+has no published URL, so it's built without one.
 
 Watch mode also rebuilds when the template changes. A save that breaks the build (e.g. a missing
 front matter key) prints the error and keeps watching. It doesn't reload the browser; refresh it yourself.
@@ -134,8 +140,8 @@ headings wrapped in `<mark>`, `class="fragment"`, `<aside class="notes">`, and
 
 ## Changing the template
 
-`index.html` here is the template for both options. Keep the `{{key}}` placeholders and the two
-`slides:` marker comments; the build fills the first from front matter (a missing key is an error)
+`index.html` here is the template for both options. Keep the `{{key}}` placeholders and the marker
+comments (`slides:`, `about:`, `qr`); the build fills the first from front matter (a missing key is an error)
 and replaces everything between the markers with the markdown. Run `npm test` after touching
 `scripts/build-talk.mjs`.
 

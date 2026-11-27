@@ -4,5 +4,8 @@
     "build:talk": "node scripts/build-talk.mjs",
     "watch:talk": "node scripts/build-talk.mjs --watch",
     "test": "node --test scripts/build-talk.test.mjs"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
   }
 }

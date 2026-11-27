@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { ageOn, build } from './build-talk.mjs';
+import { join } from 'node:path';
+import { ageOn, build, talkUrl } from './build-talk.mjs';
 
 test('fills front matter, marks headings outside code, keeps slide markdown intact', () => {
   const template = '<title>{{title}}</title><!-- slides:start -->sample<!-- slides:end -->';
@@ -47,4 +48,12 @@ test('age turns over on June 15 and can be pinned in front matter', () => {
   assert.equal(ageOn(new Date(2027, 0, 1)), 37);
   assert.equal(build('{{age}}', '---\ntitle: t\n---\n'), String(ageOn(new Date())));
   assert.equal(build('{{age}}', '---\nage: 31\n---\n'), '31');
+});
+
+test('talkUrl encodes the folder; the QR goes where the template marks it, or nowhere', () => {
+  assert.equal(talkUrl(join('2026', 'frontends modernos com django-vite')),
+    'https://lucianoratamero.github.io/talks/2026/frontends%20modernos%20com%20django-vite/');
+  const md = '---\ntitle: t\n---\n';
+  assert.equal(build('a<!-- qr -->b', md, { qr: '<svg/>' }), 'a<div class="qr"><svg/></div>b');
+  assert.equal(build('a<!-- qr -->b', md), 'ab');
 });
