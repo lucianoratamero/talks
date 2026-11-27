@@ -174,3 +174,29 @@ html.dark .reveal {
 .reveal code:not(pre code, mark code) {
   overflow-wrap: anywhere;
 }
+
+/* Firefox + concave: while any neighbor slide sits rotated in 3D (even invisible, at opacity 0), Firefox clips
+   part of the current slide, e.g. the left of a left-aligned title. So idle neighbors are "parked" flat and
+   off-screen; the template's script un-parks them right before a slide change, so they still swing in and out
+   in 3D. No animation while parking, since they're invisible by then. Not in overview/print, which place
+   slides themselves. */
+html:not(.reveal-print) .reveal.concave:not(.overview) .slides > section.parked.future {
+  transform: translate(150%) !important;
+  transition: none !important;
+}
+
+html:not(.reveal-print) .reveal.concave:not(.overview) .slides > section.parked.past {
+  transform: translate(-150%) !important;
+  transition: none !important;
+}
+
+/* same for vertical stacks: slides above/below the current one are parked flat, out of view */
+html:not(.reveal-print) .reveal.concave:not(.overview) .slides > section > section.parked.future {
+  transform: translateY(150%) !important;
+  transition: none !important;
+}
+
+html:not(.reveal-print) .reveal.concave:not(.overview) .slides > section > section.parked.past {
+  transform: translateY(-150%) !important;
+  transition: none !important;
+}

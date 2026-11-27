@@ -103,6 +103,9 @@ revealjs.com (layout, auto-animate, backgrounds).
 
 Gotchas:
 - A line containing only `---` inside a code block still splits the slide.
+- With the `concave` transition, the slides next to the current one (left/right and up/down) are kept flat
+  while idle and only rotate during the transition (the template's script does it): Firefox cuts off part of the current
+  slide whenever a neighbor sits rotated in 3D.
 - For bullets, use `bullets: step`/`data-step` rather than a `.element` comment per item: the comment attaches
   to the closest element before it, so on an item with a link or `code` only that link/code steps.
 - `paragraphs: step` steps every paragraph, including a short "kicker" line above a heading, which then

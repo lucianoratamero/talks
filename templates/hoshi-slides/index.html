@@ -189,6 +189,25 @@
       });
       Reveal.sync();
     });
+
+    // concave + Firefox: neighbors are parked flat while idle (see template.css). Right before a slide change,
+    // snap them back to their 3D spot without animating, so reveal's transition still swings them in/out;
+    // park them again once the transition is over (the timeout covers changes that never fire transitionend).
+    // Every level: slides above/below the current one in a vertical stack rotate in 3D too
+    const sections = () => document.querySelectorAll('.reveal .slides section');
+    const park = () => sections().forEach((s) => s.classList.toggle('parked', !s.classList.contains('present')));
+    let parkLater;
+    Reveal.on('ready', park);
+    Reveal.on('slidetransitionend', park);
+    Reveal.on('beforeslidechange', () => {
+      const parked = document.querySelectorAll('.reveal .slides section.parked');
+      parked.forEach((s) => { s.style.transition = 'none'; s.classList.remove('parked'); });
+      document.body.offsetWidth; // apply the 3D spot now, so the transition starts from it
+      parked.forEach((s) => { s.style.transition = ''; });
+      const duration = { fast: 400, slow: 1200 }[Reveal.getConfig().transitionSpeed] ?? 800;
+      clearTimeout(parkLater);
+      parkLater = setTimeout(park, duration + 200); // after the transition, never during it
+    });
   </script>
 
 </body>
