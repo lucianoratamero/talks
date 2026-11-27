@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<style>
+:root{
+--logo: ;
+--logo-size: 14;
+--text-scale-intensity: 1.3;
+--darkaccent1color: ;
+--lightaccent1color: ;
+--accent2: #76ccd6;
+--accent3: #f0bc00;
+--accent4: #3a928b;
+--accent5: #2a808d;
+--accent6: #8d8e8e;
+--lighttitletextcolor: #d16429;
+--darktitletextcolor: #d16429;
+--lightbodytextcolor: #f0f2f2;
+--darkbodytextcolor: #292929;
+--lightbackgroundcolor: transparent;
+--darkbackgroundcolor: transparent;
+--bodyfont: allo;
+--titlefont: allo;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/ll.css">
+<style>.reveal .pause-overlay .resume-button { display: none; }</style>
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<link rel="stylesheet" href="engine/billboard.min.css">
+</head>
+<body class="responsive  ">
+<div class="reveal">
+<div class="slides">
+<section class="variable-size-headings has-graph-background dark cover-container wide"  data-background-color="#143338"style="--darkbackgroundcolor: #143338;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover slide-contents">
+        <div class="element-group"><h1 id="frontends-modernos-com-django-vite">frontends modernos com <code>django-vite</code></h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#14383c"style="--darkbackgroundcolor: #14383c;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h2 id="luciano-ratamero">Luciano Ratamero</h2> 
+  <ul> 
+   <li>37 anos, friburguense</li> 
+   <li>amo música, poesia, fotografia e videogames</li> 
+   <li>jornalista de formação</li> 
+   <li>dev web, com foco em frontend desde 2010</li> 
+   <li>trabalho na <a href="https://lincolnloop.com/">Lincoln Loop</a>, empresa de consultoria dos EUA, desde 2022</li> 
+   <li>atualmente sou parte do time que trabalha no site <a href="https://firefox.com">firefox.com</a></li> 
+  </ul>
+ </div> 
+ <figure class="">
+  <img src="media/eu-3x.BBbubq3Q.jpg" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark default-container wide"  data-background-color="#143d41"style="--darkbackgroundcolor: #143d41;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default slide-contents">
+        <div  class="element-group"><h2 id="avisos">avisos</h2>
+<ul>
+<li>tudo que eu vou falar é sobre prós e contras</li>
+<li>gosto de dar um apanhado geral pra vocês tomarem suas próprias decisões</li>
+<li>aberto para perguntas a qualquer momento</li>
+<li>palavras de baixo calão</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#0f3338"style="--darkbackgroundcolor: #0f3338;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><hgroup><p class="kicker">antes de tudo...</p>
+<h2 id="eu-3-django">eu &lt;3 django</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#08282e"style="--darkbackgroundcolor: #08282e;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><hgroup><p class="kicker">e também...</p>
+<h2 id="eu-3-python">eu &lt;3 python</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark default-container wide"  data-background-color="#13272a"style="--darkbackgroundcolor: #13272a;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default slide-contents">
+        <div  class="element-group"><h2 id="filosofia-do-django">filosofia do django</h2>
+<ul>
+<li>baterias inclusas</li>
+<li>ferramentas completas desde o banco de dados até formulários, templates, e interfaces administrativas</li>
+<li>arquitetura flexível e modular</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark section-container wide"  data-background-color="#242829"style="--darkbackgroundcolor: #242829;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section slide-contents">
+        <div class="element-group">
+          <h3 class="kicker" id="no-entanto">no entanto</h3><h2 id="grande-parte-dos-projetos-django-são-apis-rest">grande parte dos projetos django são APIs REST</h2>
+<p>django rest framework e django ninja são ferramentas sensacionais para APIs</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section>
+<section class="variable-size-headings has-graph-background dark section-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section slide-contents">
+        <div class="element-group">
+          <h3 id="isso-diz-muito-sobre-django">isso diz muito sobre django</h3>
+<p>ele é tão bom que as pessoas preferem continuar usando, mesmo ignorando duas partes gigantescas do framework</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><hgroup><p class="kicker">se o django tem ferramentas maravilhosas pro frontend</p>
+<h2 id="qual-o-problema-com-as-ferramentas-de-front-do-django">qual o problema com as ferramentas de front do django?</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><h2 id="mpa-vs-spa">MPA vs SPA</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark default-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default slide-contents">
+        <div  class="element-group"><h3 id="mpas">MPAs</h3>
+<ul>
+<li><em>Multi-Page Applications</em></li>
+<li>seguem as diretrizes clássicas da web</li>
+<li>toda vez que um link é clicado, o navegador refaz a tela inteira, o que pode dar a sensação de lentidão ao usuário</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark default-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default slide-contents">
+        <div  class="element-group"><h3 id="spas">SPAs</h3>
+<ul>
+<li><em>Single-Page Applications</em></li>
+<li>focam na experiência do usuário e na rápida prototipagem</li>
+<li>quando um link é clicado, o JS captura o click, muda a rota, pega os dados que precisa e mostra o que deve, sem reiniciar a página</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><h2 id="hora-do-código">hora do código</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><h3 class="kicker" id="então-se-quisermos-os-dois">então, se quisermos os dois</h3><h2 id="vamos-separar-o-front-e-o-back-em-dois-projetos">vamos separar o front e o back em dois projetos</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><h3 class="kicker" id="mas-se-a-gente-quiser-o-front-separado">mas se a gente quiser o front separado</h3><h2 id="agora-a-gente-tem-dois-problemas">agora a gente tem dois problemas</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark section-container wide"  data-background-color="#242829"style="--darkbackgroundcolor: #242829;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section slide-contents">
+        <div class="element-group">
+          <h3 id="dois-projetos-=-dois-deploys-=-manutenção-dupla">dois projetos = dois deploys = manutenção dupla</h3>
+<p>e, nos dias de hoje, mais vai e vem na hora de usar IA</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section>
+<section class="variable-size-headings has-graph-background dark default-container wide"  data-background-color="#13272a"style="--darkbackgroundcolor: #13272a;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default slide-contents">
+        <div  class="element-group"><h3 id="equipes-separadas">equipes separadas</h3>
+<ul>
+<li>geram burocracia de gestão</li>
+<li>geram feudos de conhecimento</li>
+<li>geram ruído de comunicação</li>
+<li>geram rixas entre os times</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#08282e"style="--darkbackgroundcolor: #08282e;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><h2 id="mas-e-se-eu-te-dissesse-que-dá-pra-ter-todos-os-benefícios-dos-projetos-separados-sem-nenhum-dos-problemas">mas e se eu te dissesse que dá pra ter todos os benefícios dos projetos separados sem nenhum dos problemas?</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark default-container wide"  data-background-color="#0e3338"style="--darkbackgroundcolor: #0e3338;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default slide-contents">
+        <div  class="element-group"><h2 id="django-vite"><code>django-vite</code></h2>
+<ul>
+<li>é uma biblioteca (uma app django) que traz ferramentas para integrar um projeto vite ao django</li>
+<li>interfere indiretamente na renderização da aplicação</li>
+<li>te permite usar o que você precisa de ferramentas de front</li>
+<li>se acopla às ferramentas de controle de arquivos estáticos do django</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#143d41"style="--darkbackgroundcolor: #143d41;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><h2 id="hora-do-código">hora do código</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark default-container wide"  data-background-color="#14383c"style="--darkbackgroundcolor: #14383c;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default slide-contents">
+        <div  class="element-group"><h2 id="conclusão">conclusão</h2>
+<ul>
+<li>⁣é mais uma ferramenta na hora de tomar decisões</li>
+<li>inclui devs de um time no código do outro</li>
+<li>por manter a arquitetura monolítica, facilita muito os deploys e as resoluções de problemas</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#143338"style="--darkbackgroundcolor: #143338;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split slide-contents">
+        <div class="element-group"><h2 id="obrigado">obrigado!</h2>
+<h3 id="até-a-próxima">até a próxima :]</h3></div>
+        <div class="element-group"><p><a href="mailto:luciano@ratamero.com">luciano@ratamero.com</a></p>
+<p>@ratamero no bluesky</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section>
+</div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/d3v4.min.js"></script>
+<script src="engine/billboard.min.js"></script>
+<script src="engine/infographics.js"></script>
+<script src="engine/highlight.min.js"></script>
+<script src="engine/katex/katex.min.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{
+  "Presets": [
+    {
+      "Name": "Default",
+      "TitleFont": "Allo",
+      "BodyFont": "Allo",
+      "Appearance": "dark",
+      "DarkBodyTextColor": "#292929",
+      "LightBodyTextColor": "#f0f2f2",
+      "DarkTitleTextColor": "#d16429",
+      "LightTitleTextColor": "#d16429",
+      "DarkBackgroundColor": "transparent",
+      "LightBackgroundColor": "transparent",
+      "Accent1": "#d16429",
+      "Accent2": "#76ccd6",
+      "Accent3": "#f0bc00",
+      "Accent4": "#3a928b",
+      "Accent5": "#2a808d",
+      "Accent6": "#8d8e8e",
+      "LightBgGradient": [
+        "#D7F2F4",
+        "#EFF9FB",
+        "#D6F0E8",
+        "#F4FAF8",
+        "#F0F2F2",
+        "#FFFEE5",
+        "#FFFDC2",
+        "#FDF9ED",
+        "#FAF2DB",
+        "#F7F8F8",
+        "#FFFFFF"
+      ],
+      "DarkBgGradient": [
+        "#143338",
+        "#153E42",
+        "#07262C",
+        "#292929",
+        "#292929",
+        "#292929",
+        "#292929",
+        "#292929",
+        "#07262C",
+        "#153E42",
+        "#143338"
+      ]
+    },
+    {
+      "Name": "Light",
+      "Appearance": "light",
+      "TitleFont": "Allo",
+      "BodyFont": "Allo",
+      "DarkBodyTextColor": "#292929",
+      "LightBodyTextColor": "#f0f2f2",
+      "DarkTitleTextColor": "#d16429",
+      "LightTitleTextColor": "#d16429",
+      "DarkBackgroundColor": "transparent",
+      "LightBackgroundColor": "transparent",
+      "Accent1": "#0d0d0d",
+      "Accent2": "#424242",
+      "Accent3": "#747474",
+      "Accent4": "#a5a7a7",
+      "Accent5": "#d7d9d9",
+      "Accent6": "#f0f2f2",
+      "LightBgGradient": [
+        "#D7F2F4",
+        "#EFF9FB",
+        "#D6F0E8",
+        "#F4FAF8",
+        "#F0F2F2",
+        "#FFFEE5",
+        "#FFFDC2",
+        "#FDF9ED",
+        "#FAF2DB",
+        "#F7F8F8",
+        "#FFFFFF"
+      ],
+      "DarkBgGradient": [
+        "#143338",
+        "#153E42",
+        "#07262C",
+        "#292929",
+        "#292929",
+        "#292929",
+        "#292929",
+        "#292929",
+        "#07262C",
+        "#153E42",
+        "#143338"
+      ]
+    }
+  ]
+}

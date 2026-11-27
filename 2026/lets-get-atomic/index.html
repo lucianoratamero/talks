@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<style>
+:root{
+--logo: ;
+--logo-size: 14;
+--text-scale-intensity: 1;
+--darkaccent1color: ;
+--lightaccent1color: ;
+--accent2: #76ccd6;
+--accent3: #f0bc00;
+--accent4: #3a928b;
+--accent5: #2a808d;
+--accent6: #8d8e8e;
+--lighttitletextcolor: #d16429;
+--darktitletextcolor: #d16429;
+--lightbodytextcolor: #f0f2f2;
+--darkbodytextcolor: #292929;
+--lightbackgroundcolor: transparent;
+--darkbackgroundcolor: transparent;
+--bodyfont: Allo;
+--titlefont: Allo;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/ll.css">
+<style>.reveal .pause-overlay .resume-button { display: none; }</style>
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<link rel="stylesheet" href="engine/billboard.min.css">
+</head>
+<body class="responsive  ">
+<div class="reveal">
+<div class="slides">
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#143338"style="--darkbackgroundcolor: #143338;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/CleanShot 2026-11-12 at 16.55.20.png" class=" position-center-top" />
+ </figure> 
+ <div class="element-group">
+  <h1 id="lets-get-atomic">Let's get Atomic!</h1> 
+  <p>Applying Atomic Design <br />to Wagtail blocks</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#14383d"style="--darkbackgroundcolor: #14383d;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h3 id="luciano-ratamero">Luciano Ratamero</h3> 
+  <ul> 
+   <li>Brazilian, 37, based in Nova Friburgo, on the mountains near Rio</li> 
+   <li>Loves music, reading, photography, and video games</li> 
+   <li>Full-stack dev, mostly on the frontend side, since 2010</li> 
+   <li>In Lincoln Loop since 2022</li> 
+  </ul> 
+  <br /> 
+  <blockquote> 
+   <p>Fun fact</p> 
+   <p>My college degree is in Journalism, not Computer Sciences</p> 
+  </blockquote>
+ </div> 
+ <figure class="">
+  <img src="media/eu-3x.BBbubq3Q.jpg" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#143c40"style="--darkbackgroundcolor: #143c40;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><h2 id="what-is-atomic-design">What is Atomic Design?</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark grid-container wide"  data-background-color="#0c3035"style="--darkbackgroundcolor: #0c3035;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <h3 id="design-system-methodology-by-brad-frost">Design system methodology by Brad Frost</h3> 
+  <p>Divides the design into five composable stages</p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/atomic-design-process.png" class=" position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#0a262b"style="--darkbackgroundcolor: #0a262b;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><h2 id="complexity-as-a-spectrum">Complexity as a spectrum</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#1c272a"style="--darkbackgroundcolor: #1c272a;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h3 id="granular-control-in-one-big-block-can-be-cumbersome">Granular control in one big block can be cumbersome</h3> 
+  <p>Exposing atoms directly is a bit much</p>
+ </div> 
+ <figure class="">
+  <img src="media/Clipboard.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 1.png" class=" position-center-center" />
+ </figure> 
+ <div class="element-group">
+  <h3 id="and-no-control-might-give-the-editor-analysis-paralysis">And no control might give the editor analysis paralysis</h3> 
+  <p>Exposing only templates will require a lot of documentation and experience</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h3 id="case-study-firefoxcom">Case study: <a href="https://firefox.com">firefox.com</a></h3> 
+  <p>We were hired to build the new design and add Wagtail as a CMS</p>
+ </div> 
+ <figure class="">
+  <img src="media/Clipboard 19.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/CleanShot 2026-11-12 at 17.56.09.png" class=" size-contain position-center-center" />
+ </figure> 
+ <div class="element-group">
+  <h3 id="how-we-built-and-rebuilt-our-cards">How we built (and rebuilt) our cards</h3> 
+  <p>In the previous design, there was only one type of card</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark grid-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-6 media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 4.png" class=" position-center-center" />
+ </figure>
+ <div class="element-group">
+  <h3 id="when-implementing-the-new-design">When implementing the new design</h3> 
+  <p>We went with multiple blocks</p>
+ </div>
+ <figure class="">
+  <img src="media/Clipboard 11.png" class=" position-center-center" />
+ </figure>
+ <div class="element-group">
+  <h3 id="different-fields">Different fields</h3> 
+  <p>And templates</p>
+ </div>
+ <figure class="">
+  <img src="media/Clipboard 10.png" class=" position-center-center" />
+ </figure>
+ <div class="element-group">
+  <h3 id="to-keep-design-consistency">To keep design consistency</h3> 
+  <p>And make the editors know exactly what to use</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h2 id="after-a-few-months">After a few months</h2> 
+  <p>We started to notice some very small antipatterns</p>
+ </div> 
+ <figure class="">
+  <img src="media/Clipboard 12.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 18.png" class=" position-center-center" />
+ </figure> 
+ <div class="element-group">
+  <h2 id="so-we-merged-the-ones-that-were-generally-used">So we merged the ones that were generally used</h2> 
+  <p>And kept the single use ones separate</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark section-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section slide-contents">
+        <div class="element-group">
+          <h3 id="when-inheriting-a-system">When inheriting a system</h3>
+<p>Resist the temptation to keep the patterns that are there, but more importantly <strong>keep your editors in the loop</strong></p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section>
+<section class="variable-size-headings has-graph-background dark grid-container wide"  data-background-color="#292929"style="--darkbackgroundcolor: #292929;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <h2 id="the-media-content-conundrum">The Media + Content conundrum</h2> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Clipboard 20.png" class=" position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#1c272a"style="--darkbackgroundcolor: #1c272a;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h3 id="cut-the-problem-into-pieces">Cut the problem into pieces</h3> 
+  <ul> 
+   <li>We kept our settings minimal</li> 
+   <li>Used generic blocks as much as possible</li> 
+  </ul>
+ </div> 
+ <figure class="">
+  <img src="media/Clipboard 22.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark v-split-container wide"  data-background-color="#0a262b"style="--darkbackgroundcolor: #0a262b;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 23.png" class=" size-contain position-center-center" />
+ </figure> 
+ <div class="element-group">
+  <h3 id="created-a-media-block">Created a Media block</h3> 
+  <ul> 
+   <li>It encapsulates images, videos, animations, etc.</li> 
+   <li>Made it the default for media <em>everywhere</em></li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-graph-background dark title-container wide"  data-background-color="#0c3035"style="--darkbackgroundcolor: #0c3035;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title slide-contents">
+        <div class="element-group"><h2 id="i-3-stream-blocks">I &lt;3 Stream Blocks</h2>
+<p>They allow us to reuse blocks,</p>
+<p>validate the content before publishing</p>
+<p>and remove complexity form the parent block</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark default-container wide"  data-background-color="#143c40"style="--darkbackgroundcolor: #143c40;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default slide-contents">
+        <div  class="element-group"><h2 id="lessons-learned">Lessons learned</h2>
+<ul>
+<li>Blocks within blocks give you a new dimension you can use to extract complexity</li>
+<li>Atomic Design's biggest strength is composability, and Stream Blocks are great for that</li>
+<li>Hiding complexity is key, or &quot;Sometimes all you need is a bit of CSS&quot;</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark default-container wide"  data-background-color="#14383d"style="--darkbackgroundcolor: #14383d;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default slide-contents">
+        <div  class="element-group"><h3 id="llms-are-great-for-documentation">LLMs are great for documentation</h3>
+<ul>
+<li>Non-technical people need something they can not only read, but play and experiment with</li>
+<li>We built database fixtures that contain sample pages with self documenting blocks</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section>
+<section class="variable-size-headings has-graph-background dark grid-container wide"  data-background-color="#143338"style="--darkbackgroundcolor: #143338;">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 has-only-media media-grid"> 
+ <figure class="">
+  <img src="media/CleanShot 2026-11-12 at 20.39.35.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+</div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/d3v4.min.js"></script>
+<script src="engine/billboard.min.js"></script>
+<script src="engine/infographics.js"></script>
+<script src="engine/highlight.min.js"></script>
+<script src="engine/katex/katex.min.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>

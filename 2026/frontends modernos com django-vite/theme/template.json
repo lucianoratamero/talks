@@ -1,0 +1,21 @@
+{
+  "Name": "LL",
+  "Version": "1.0.3",
+  "Author": "LL",
+  "ShortDescription": "",
+  "LongDescription": "",
+  "Css": "ll.css",
+  "TitleFont": "Allo",
+  "BodyFont": "Allo",
+  "CssClasses": "variable-size-headings has-graph-background",
+  "LayoutExamples": [
+    {
+      "Name": "Title with Background",
+      "Markdown": "/Theme/image2.webp\nBackground: true\nopacity: 30%\n\n# TITLE\n#### with background"
+    },
+    {
+      "Name": "Subtitle with Background",
+      "Markdown": "/Theme/image2.webp\nBackground: true\nopacity: 30%\n\n## SUBTITLE\n#### with background"
+    }
+  ]
+}
