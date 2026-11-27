@@ -152,24 +152,11 @@ mas e se eu te dissesse que
 - é mais uma ferramenta na hora de tomar decisões
 
 ---
-<!-- .slide: class="align-left" -->
 
-## referências <!-- .element: class="align-center" -->
-
-<div class="r-hstack">
-<div>
-
-os slides estão em [lucianoratamero.github.io/talks](https://lucianoratamero.github.io/talks) <!-- .element: class="r-fit-text" -->
-
-</div>
-
-<div>
+## referências
 
 - [django](https://docs.djangoproject.com/)
 - [django-vite](https://github.com/MrBin99/django-vite)
 - [vite](https://vite.dev/)
 - [svelte](https://svelte.dev/)
 - [código de exemplo](https://github.com/lucianoratamero/django-vite-sample)
-
-</div>
-</div>
