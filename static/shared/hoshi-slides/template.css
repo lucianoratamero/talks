@@ -210,33 +210,11 @@ html:not(.reveal-print) .reveal.concave:not(.overview) .slides > section > secti
   border-radius: 0.25em;
 }
 
-/* theme toggle (D): ease colors instead of snapping. A gradient can't be transitioned, so the heading
-   gradient's two colors are registered custom properties, which can. Only elements reveal doesn't animate
-   itself (its controls, progress fill and fragments keep their own transitions). Change the timing here: */
+/* theme toggle (D): ease colors instead of snapping (the heading gradient is the same in both themes). Only
+   elements reveal doesn't animate itself (its controls, progress fill and fragments keep their own
+   transitions). Change the timing here: */
 .reveal-viewport {
   --theme-transition: 0.4s ease-in-out;
-}
-
-@property --mark-from {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: #2d6694;
-}
-
-@property --mark-to {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: #cc1bbd;
-}
-
-html.dark .reveal {
-  --mark-from: #5fa8e0;
-  --mark-to: #e75ad9;
-}
-
-/* `html` for specificity: beats custom.css's fixed dark gradient (html.dark mark), which loads earlier */
-html .reveal mark {
-  background-image: linear-gradient(145deg, var(--mark-from), var(--mark-to));
 }
 
 /* the zoom plugin (Alt+click) sets `transition: transform 0.8s ease` inline on <body>, which would win over a
@@ -246,7 +224,7 @@ html .reveal mark {
 }
 
 .reveal {
-  transition: color var(--theme-transition), --mark-from var(--theme-transition), --mark-to var(--theme-transition);
+  transition: color var(--theme-transition);
 }
 
 .reveal h1,

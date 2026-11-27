@@ -70,12 +70,12 @@ theme: dark
   build (birthday is in `ageOn` in `scripts/build-talk.mjs`), so rebuilding a talk a year later bumps it.
   Set it to pin the age you had when you gave the talk.
 
-Dark mode is a set of `html.dark` rules at the end of `static/shared/hoshi-slides/custom.css`, with a
-lighter gradient so headings stay readable. Talks without `class="dark"` on `<html>` (all the older
+Dark mode is a set of `html.dark` rules at the end of `static/shared/hoshi-slides/custom.css`; headings keep
+the same gradient as in light mode. Talks without `class="dark"` on `<html>` (all the older
 ones) are unaffected; an old talk can opt in by adding that class by hand.
 
 While presenting, press `D` to flip between light and dark on the fly (it's also listed in reveal's
-`?` help overlay). Colors ease over 0.4s, the heading gradient included; change `--theme-transition` in
+`?` help overlay). Colors ease over 0.4s; change `--theme-transition` in
 `static/shared/hoshi-slides/template.css` to retime it. The toggle isn't saved: a reload goes back to the front matter `theme`, and the
 speaker notes window (`S`) keeps its own theme.
 
