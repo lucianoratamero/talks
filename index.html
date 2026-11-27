@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>talks - Luciano Ratamero</title>
+  <meta name="description" content="Slides de todas as palestras de Luciano Ratamero.">
+  <link rel="icon" href="https://ratamero.com/favicon.png">
+  <style>
+    :root {
+      --cyan-50: oklch(98.4% .019 200.873); --cyan-100: oklch(95.6% .045 203.388);
+      --cyan-200: oklch(91.7% .08 205.041); --cyan-400: oklch(78.9% .154 211.53);
+      --cyan-600: oklch(60.9% .126 221.723); --cyan-800: oklch(45% .085 224.283);
+      --cyan-900: oklch(39.8% .07 227.392); --cyan-950: oklch(30.2% .056 229.695);
+      --sky-500: oklch(68.5% .169 237.323); --pink-500: oklch(65.6% .241 354.308);
+      --zinc-100: oklch(96.7% .001 286.375); --zinc-200: oklch(92% .004 286.32);
+      --zinc-400: oklch(70.5% .015 286.067); --zinc-500: oklch(55.2% .016 285.938);
+      --zinc-900: oklch(21% .006 285.885);
+      --bg-from: var(--cyan-50); --bg-to: var(--cyan-100); --band: color-mix(in oklab, var(--cyan-200) 50%, transparent);
+      --text: var(--zinc-900); --title: var(--zinc-900); --title-hover: var(--cyan-600); --muted: var(--zinc-500);
+      --accent: var(--cyan-600); --rule: var(--cyan-800); --footer: var(--cyan-900);
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-from: var(--cyan-900); --bg-to: var(--cyan-950); --band: color-mix(in oklab, var(--cyan-800) 50%, transparent);
+        --text: #fff; --title: var(--cyan-400); --title-hover: var(--cyan-100); --muted: var(--zinc-400);
+        --accent: var(--cyan-400); --rule: var(--cyan-200); --footer: var(--zinc-200);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--text); line-height: 1.5;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(to bottom right, var(--bg-from), var(--bg-to)) fixed;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 48rem; margin: 0 auto; padding: 0 1.5rem; }
+    .fancy-text {
+      display: inline-block; font-weight: 700;
+      background: linear-gradient(to right in oklab, var(--cyan-400), var(--sky-500), var(--pink-500));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    nav { padding: 2rem 1.5rem; font-size: 2.25rem; }
+    .hero { background: var(--band); padding: 3.5rem 0; margin-bottom: 2rem; font-size: 1.25rem; font-weight: 500; }
+    .hero h1 { margin: 0 0 1.5rem -0.2rem; font-size: clamp(3.75rem, 15vw, 8rem); line-height: 1; }
+    .hero p { margin: 0 0 .5rem; }
+    .hero .accent { color: var(--accent); }
+    ol { list-style: none; margin: 0; padding: 0; }
+    li a { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 1rem; padding: 1rem 0; color: var(--title); font-size: 1.25rem; font-weight: 500; transition: color .15s; }
+    li a:hover, li a:focus-visible { color: var(--title-hover); }
+    li small { display: block; font-size: 1rem; font-weight: 400; color: var(--muted); }
+    li time { color: var(--muted); font-size: 1.125rem; font-weight: 400; }
+    footer { margin: 4rem auto 2rem; }
+    footer hr { border: 0; border-top: 1px solid var(--rule); margin-bottom: 2rem; }
+    footer a { color: var(--footer); margin-right: 1.5rem; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav class="container"><a class="fancy-text" href="https://ratamero.com">hi :]</a></nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1 class="fancy-text">talks</h1>
+      <p>slides de todas as palestras e oficinas que já dei, da mais nova para a mais antiga.</p>
+      <p class="accent">bom proveito!</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- newest first: add new talks at the top -->
+    <ol>
+      <li><a href="2026/lets-get-atomic/"><span>Let's get Atomic!</span><time>2026</time></a></li>
+      <li><a href="2026/frontends%20modernos%20com%20django-vite/"><span>frontends modernos com django-vite</span><time>2026</time></a></li>
+      <li><a href="2024/frontend-basico-para-backenders/"><span>Frontend básico para backenders</span><time>2024</time></a></li>
+      <li><a href="2024/live%20de%20python%20-%20historia%20do%20front/"><span>uma história opinionada sobre o frontend<small>Live de Python</small></span><time>2024</time></a></li>
+      <li><a href="2021/react-context-como-onde-quando/"><span>React Context - Como, onde, quando?</span><time>2021</time></a></li>
+      <li><a href="2021/svelte-componentes-sem-boilerplate/"><span>Svelte - Componentes sem boilerplate</span><time>2021</time></a></li>
+      <li><a href="2021/tailwindcss-vantagens-e-desvantagens/"><span>Tailwind CSS - Vantagens e desvantagens</span><time>2021</time></a></li>
+      <li><a href="2021/svelte-capacitor-vs-cordova/"><span>Svelte: Capacitor vs Cordova</span><time>2021</time></a></li>
+      <li><a href="2019/apaixonando-se%20por%20python/"><span>apaixonando-se por python</span><time>2019</time></a></li>
+      <li><a href="2018/pybr%20-%20Django%20-%20da%20requisi%C3%A7%C3%A3o%20%C3%A0%20resposta/"><span>Django - da requisição à resposta<small>Python Brasil</small></span><time>2018</time></a></li>
+      <li><a href="2018/Django%20-%20da%20requisi%C3%A7%C3%A3o%20%C3%A0%20resposta/"><span>Django - da requisição à resposta</span><time>2018</time></a></li>
+      <li><a href="2018/API%20Star%3A%20novo%20framework%20REST%20do%20criador%20do%20DRF/"><span>API Star: novo framework REST do criador do DRF</span><time>2018</time></a></li>
+      <li><a href="2018/python%20para%20desenvolvedores%20javascript/"><span>python para desenvolvedores javascript</span><time>2018</time></a></li>
+      <li><a href="2017/Django%20%2B%20React%3A%20dicas%20para%20quem%20quer%20fazer%20sua%20primeira%20app%20desacoplada/"><span>Django + React: dicas para quem quer fazer sua primeira app desacoplada</span><time>2017</time></a></li>
+      <li><a href="2017/como%20usar%20django%20nos%20tempos%20de%20angular%20e%20react/"><span>como usar django nos tempos de angular e react</span><time>2017</time></a></li>
+      <li><a href="2017/apistar%3A%20novo%20framework%20REST%20feito%20para%20python3/"><span>apistar: novo framework REST feito para python3</span><time>2017</time></a></li>
+      <li><a href="2017/apaixonando-se%20por%20python/"><span>Apaixonando-se por Python</span><time>2017</time></a></li>
+      <li><a href="2016/fazendo%20seu%20site%20-%20blog%20no%20Github%20Pages%20com%20Python%20e%20Lektor/"><span>fazendo seu site/blog no GitHub Pages com Python e Lektor</span><time>2016</time></a></li>
+      <li><a href="2016/introdu%C3%A7%C3%A3o%20ao%20domain%20driven%20design%20com%20django/"><span>introdução ao Domain Driven Design com Django</span><time>2016</time></a></li>
+      <li><a href="2015/tdc%20-%20poa%20-%20segregated%20dom/"><span>JS limpo e testável com Segregated DOM<small>TDC Porto Alegre</small></span><time>2015</time></a></li>
+      <li><a href="2015/tdc%20-%20poa%20-%20django-pipeline/"><span>django-pipeline<small>TDC Porto Alegre</small></span><time>2015</time></a></li>
+    </ol>
+  </main>
+
+  <footer class="container">
+    <hr>
+    <a href="https://ratamero.com">ratamero.com</a>
+    <a href="https://github.com/lucianoratamero/talks">GitHub</a>
+    <a href="https://bsky.app/profile/lucianoratamero.bsky.social">Bluesky</a>
+    <a href="https://youtube.com/channel/UCYBAN_yOwqKG6tlaPHvROqg">YouTube</a>
+  </footer>
+</body>
+</html>
