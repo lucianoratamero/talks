@@ -66,15 +66,38 @@
   font-weight: 700;
 }
 
-/* inline code: a faint chip; translucent mid-gray reads as "slightly darker" on light and "slightly lighter"
-   on dark, so no dark-mode rule. Skipped inside <mark>: the gradient is a background clipped to the text,
-   and a background on the <code> would paint over it. */
+/* inline code: a tight chip. Translucent mid-gray reads as "slightly darker" on light and "slightly lighter"
+   on dark, so no dark-mode rule. */
+.reveal code:not(pre code) {
+  --chip: rgba(127, 127, 127, 0.15);
+  padding: 0 0.15em;
+  border-radius: 0.25em;
+}
+
+/* inline-block so a short line-height sizes the chip (an inline background always spans the font's full
+   height) and it never splits across lines */
 .reveal code:not(pre code, mark code) {
-  padding: 0.1em 0.3em;
-  border-radius: 0.3em;
-  background: rgba(127, 127, 127, 0.15);
-  -webkit-box-decoration-break: clone; /* a chip that wraps gets rounded ends on each line */
-  box-decoration-break: clone;
+  display: inline-block;
+  line-height: 1.15;
+  background: var(--chip);
+}
+
+/* in gradient headings the gradient is the <mark>'s background clipped to its text: a background on the
+   <code> would paint over the letters, and Safari drops inline-block text from the clip (invisible code).
+   So the code stays inline and the chip is a pseudo-element behind the letters, inset to the same height
+   as the inline-block chip; nowrap keeps it one box. */
+.reveal mark code {
+  position: relative;
+  white-space: nowrap;
+}
+
+.reveal mark code::before {
+  content: "";
+  position: absolute;
+  inset: 0.09em 0; /* the inline box is ~1.33em tall in Chrome/Firefox/Safari; trim to the 1.15em chip */
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--chip);
 }
 
 /* highlight.js blocks: the black background is on <code>, the theme's drop shadow on <pre>; round both */
