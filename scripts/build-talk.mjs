@@ -44,7 +44,7 @@ export function build(template, markdown) {
     })
     // textarea content is entity-decoded by the browser, so escaping & and < round-trips the markdown exactly
     .replace(/<!-- slides:start -->[\s\S]*<!-- slides:end -->/, () => `${MARKER}
-      <section data-markdown data-separator="^---$" data-separator-notes="^Note:">
+      <section data-markdown data-separator="^---$" data-separator-vertical="^--$" data-separator-notes="^Note:">
 <textarea data-template>
 ${slides.replace(/&/g, '&amp;').replace(/</g, '&lt;')}
 </textarea>

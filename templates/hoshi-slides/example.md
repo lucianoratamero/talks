@@ -152,6 +152,24 @@ on two slides in a row marked `data-auto-animate`, matching elements move betwee
 
 ---
 
+## vertical slides
+
+press ↓ to go down into this stack (↑ comes back up)
+
+--
+
+## a vertical slide
+
+a line with only `--` starts one; `---` still starts the next slide to the right
+
+--
+
+## the last one down here
+
+→ leaves the stack from any of its slides
+
+---
+
 ## tables
 
 | you want | front matter |

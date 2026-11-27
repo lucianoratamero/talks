@@ -78,6 +78,7 @@ Rendered in the browser by reveal's markdown plugin (marked). Inline HTML works.
 | You want | Write |
 | --- | --- |
 | New slide | a line with only `---` |
+| Vertical slide (below the current one; ↓/↑ to move) | a line with only `--`; the slides between two `---` form one vertical stack |
 | Heading with the hoshi gradient | `## heading` (every `#` heading gets `<mark>` automatically) |
 | Speaker notes (press `S`) | a line starting with `Note:`; everything after it until the next `---` is notes, and markdown (lists, **bold**, `code`) works there |
 | Reveal on next click | `point <!-- .element: class="fragment" -->` (styles: `fragment fade-up`, `fade-in-then-out`, … see revealjs.com/fragments) |
@@ -97,12 +98,12 @@ Rendered in the browser by reveal's markdown plugin (marked). Inline HTML works.
 | Background image | `<!-- .slide: data-background-image="./media/pic.png" data-background-opacity="0.15" -->` |
 | Table | a normal markdown table (`\| a \| b \|` rows, `\| --- \| --- \|` under the header) |
 
-`example.md` has a slide for each of these (except plain images and slide attributes). The `align-*`
+`example.md` has a slide for each of these (except plain images and slide attributes), and a vertical stack. The `align-*`
 classes and the equal-width columns are ours (`template.css`); the rest is reveal.js, documented at
 revealjs.com (layout, auto-animate, backgrounds).
 
 Gotchas:
-- A line containing only `---` inside a code block still splits the slide.
+- A line containing only `---` (or `--`) inside a code block still splits the slide.
 - An `.element` comment styles the element *before* it. Put it after the element (end of a heading line, or
   its own line after a paragraph/list), never above: above, it lands on the whole slide. At the end of a
   paragraph line it would land on the last link/`code` in that line, so use its own line there.
