@@ -35,21 +35,28 @@ palavras de baixo calão
 
 antes de tudo...
 
+## eu <3 vite
+
+---
+<!-- .slide: data-auto-animate -->
+
+...e também...
+
 ## eu <3 django
 
 ---
 <!-- .slide: data-auto-animate data-theme="dark" data-background-image="../../static/shared/hoshi-slides/pybr.jpg" data-background-opacity="0.15" -->
 
-e também...
+...mas além de tudo
 
 ## eu <3 python
 
 ---
 
-## filosofia do django
+## o que é o django?
 
-- baterias inclusas
-- ferramentas completas desde o banco de dados até formulários, templates, e interfaces administrativas
+- framework web com baterias inclusas
+- ferramentas completas desde o banco de dados até formulários, templates, e interface administrativa (django admin)
 - arquitetura flexível e modular
 
 ---
@@ -76,6 +83,8 @@ se o django tem ferramentas maravilhosas pro frontend
 
 ## MPA vs SPA
 
+e todas as coisas no meio
+
 ---
 
 ### MPAs
@@ -83,6 +92,7 @@ se o django tem ferramentas maravilhosas pro frontend
 - *Multi-Page Applications*
 - seguem as diretrizes clássicas da web
 - toda vez que um link é clicado, o navegador refaz a tela inteira, o que pode dar a sensação de lentidão ao usuário
+- em geral implementadas em um framework tradicional, como o django
 
 ---
 
@@ -91,6 +101,7 @@ se o django tem ferramentas maravilhosas pro frontend
 - *Single-Page Applications*
 - focam na experiência do usuário e na rápida prototipagem
 - quando um link é clicado, o JS captura o click, muda a rota, pega os dados que precisa e mostra o que deve, sem reiniciar a página
+- em geral implementadas com vite por baixo dos panos
 
 ---
 
