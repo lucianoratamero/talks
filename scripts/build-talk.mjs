@@ -16,10 +16,15 @@ export function build(template, markdown) {
   if (!frontMatter) throw new Error('markdown must start with a --- front matter block (title, description, about)');
   const meta = {
     theme: 'light', // optional, so markdown written before dark mode existed still builds
+    bullets: 'all', // `step` reveals list items one per click
+    paragraphs: 'all', // `step` reveals paragraphs one per click
     age: String(ageOn(new Date())), // age at build time; `age:` in front matter pins it for an old talk
     ...Object.fromEntries([...frontMatter[1].matchAll(/^(\w+):(.*)$/gm)].map((m) => [m[1], m[2].trim()])),
   };
   if (!['light', 'dark'].includes(meta.theme)) throw new Error(`theme must be "light" or "dark", got "${meta.theme}"`);
+  for (const key of ['bullets', 'paragraphs']) {
+    if (!['all', 'step'].includes(meta[key])) throw new Error(`${key} must be "all" or "step", got "${meta[key]}"`);
+  }
 
   // hoshi's look is the gradient <mark> on headings; leave `# comments` inside code fences alone
   let fenced = false;

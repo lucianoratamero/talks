@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="{{theme}}">
+<html lang="en" class="{{theme}}" data-bullets="{{bullets}}" data-paragraphs="{{paragraphs}}">
 
 <head>
   <meta charset="utf-8">
@@ -172,6 +172,23 @@
       document.documentElement.classList.toggle('dark');
     });
 
+    // `bullets: step` / `paragraphs: step` (whole talk, markdown slides only, so the Olá/Obrigado slides stay
+    // put) or <!-- .slide: data-step --> (one slide, both) reveal list items / paragraphs one per click.
+    // Done once the markdown has rendered: a `.element` comment on an item that contains a link or code
+    // attaches to that link/code instead of the item.
+    Reveal.on('ready', () => {
+      const md = '.slides section[data-markdown-parsed]';
+      document.querySelectorAll([
+        `html[data-bullets="step"] ${md} li`,
+        `html[data-paragraphs="step"] ${md} p`,
+        '.slides section[data-step] li',
+        '.slides section[data-step] p',
+      ].join(', ')).forEach((el) => {
+        // speaker notes aren't on the slide, and a paragraph inside a list item steps with its item
+        if (!el.closest('.notes') && !(el.tagName === 'P' && el.closest('li'))) el.classList.add('fragment');
+      });
+      Reveal.sync();
+    });
   </script>
 
 </body>

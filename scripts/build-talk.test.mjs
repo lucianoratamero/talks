@@ -20,6 +20,14 @@ test('theme defaults to light, accepts dark, rejects typos', () => {
   assert.throws(() => build('{{theme}}', '---\ntheme: drak\n---\n'), /"light" or "dark"/);
 });
 
+test('bullets and paragraphs default to all, accept step, reject typos', () => {
+  for (const key of ['bullets', 'paragraphs']) {
+    assert.equal(build(`{{${key}}}`, '---\ntitle: t\n---\n'), 'all');
+    assert.equal(build(`{{${key}}}`, `---\n${key}: step\n---\n`), 'step');
+    assert.throws(() => build(`{{${key}}}`, `---\n${key}: steps\n---\n`), new RegExp(`${key} must be "all" or "step"`));
+  }
+});
+
 test('age turns over on June 15 and can be pinned in front matter', () => {
   assert.equal(ageOn(new Date(2026, 5, 14, 23, 59)), 36);
   assert.equal(ageOn(new Date(2026, 5, 15)), 37);

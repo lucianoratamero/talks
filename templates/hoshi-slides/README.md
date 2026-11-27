@@ -56,6 +56,9 @@ theme: dark
 - `description` (required): `<meta name="description">`
 - `about` (required): the line under your name on the "Olá :]" slide
 - `theme` (optional): `light` (default) or `dark`. Anything else is a build error.
+- `bullets` (optional): `all` (default, a list shows at once) or `step` (every list item in the talk
+  appears on its own click). Anything else is a build error.
+- `paragraphs` (optional): same as `bullets`, for paragraphs.
 - `age` (optional): shown after your name on the "Olá :]" slide. Defaults to your age on the day you
   build (birthday is in `ageOn` in `scripts/build-talk.mjs`), so rebuilding a talk a year later bumps it.
   Set it to pin the age you had when you gave the talk.
@@ -77,14 +80,25 @@ Rendered in the browser by reveal's markdown plugin (marked). Inline HTML works.
 | New slide | a line with only `---` |
 | Heading with the hoshi gradient | `## heading` (every `#` heading gets `<mark>` automatically) |
 | Speaker notes (press `S`) | a line starting with `Note:`; everything after it on that slide is notes |
-| Reveal on next click | `point <!-- .element: class="fragment" -->` |
+| Reveal on next click | `point <!-- .element: class="fragment" -->` (styles: `fragment fade-up`, `fade-in-then-out`, … see revealjs.com/fragments) |
+| Bullets one per click, whole talk | `bullets: step` in the front matter |
+| Paragraphs one per click, whole talk | `paragraphs: step` in the front matter |
+| Bullets and paragraphs one per click, one slide | `<!-- .slide: data-step -->` at the top of the slide |
 | Slide attributes | `<!-- .slide: class="title-slide" data-background="#000" -->` |
 | Code with highlight | a fenced block with a language: ```` ```js ````, ```` ```python ````, ```` ```svelte ```` … |
-| Step through code lines | ```` ```js [1\|2-3] ```` |
+| Step through code lines | ```` ```js [1\|2-4\|3] ```` highlights line 1, then 2-4, then 3, one per click |
 | Image | `![alt](./media/pic.png)`, path relative to the talk folder |
+
+`example.md` has a slide for each of the "step" rows.
 
 Gotchas:
 - A line containing only `---` inside a code block still splits the slide.
+- For bullets, use `bullets: step`/`data-step` rather than a `.element` comment per item: the comment attaches
+  to the closest element before it, so on an item with a link or `code` only that link/code steps.
+- `paragraphs: step` steps every paragraph, including a short "kicker" line above a heading, which then
+  appears after the heading. On slides like that, leave the talk at `all` and use `data-step` per slide.
+- The talk-wide switches only touch slides written in markdown (not the Olá/Obrigado slides), and never
+  speaker notes. A paragraph inside a list item steps with its item.
 - Old 2021 slides used `class="title-slide"`; it only changes `h1` (left-aligned, tight line height).
 
 ## Option 2: write HTML by hand
