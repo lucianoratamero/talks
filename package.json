@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "scripts": {
+    "build:talk": "node scripts/build-talk.mjs",
+    "watch:talk": "node scripts/build-talk.mjs --watch",
+    "test": "node --test scripts/build-talk.test.mjs"
+  }
+}

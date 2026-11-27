@@ -1,0 +1,88 @@
+/* Styles only for hoshi talks built from templates/hoshi-slides: self-hosted fonts (so talks render
+   offline) and code styling. Older talks don't load this file and keep their look.
+   - Allo: bold for headings and bold text, regular elsewhere. Faces mirror the django-vite talk's
+     theme/ll.css. License: fonts/Allo-OFL.txt
+   - JetBrainsMono Nerd Font (Nerd Fonts v3.5.1 release) for code. Only Regular and Bold ship (~2.5MB each,
+     bold covers code inside headings); italic code is synthesized. License: fonts/JetBrainsMono-OFL.txt */
+@font-face {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 400;
+  src: url("fonts/JetBrainsMonoNerdFont-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 700;
+  src: url("fonts/JetBrainsMonoNerdFont-Bold.ttf") format("truetype");
+}
+
+.reveal pre,
+.reveal code {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+@font-face {
+  font-family: "Allo";
+  font-weight: 400;
+  src: url("fonts/Allo-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Allo";
+  font-weight: 400;
+  font-style: italic;
+  src: url("fonts/Allo-Oblique.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Allo";
+  font-weight: 700;
+  src: url("fonts/Allo-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Allo";
+  font-weight: 700;
+  font-style: italic;
+  src: url("fonts/Allo-BoldOblique.otf") format("opentype");
+}
+
+.reveal,
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Allo", Helvetica, sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-weight: 700;
+}
+
+/* inline code: a faint chip; translucent mid-gray reads as "slightly darker" on light and "slightly lighter"
+   on dark, so no dark-mode rule. Skipped inside <mark>: the gradient is a background clipped to the text,
+   and a background on the <code> would paint over it. */
+.reveal code:not(pre code, mark code) {
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  background: rgba(127, 127, 127, 0.15);
+  -webkit-box-decoration-break: clone; /* a chip that wraps gets rounded ends on each line */
+  box-decoration-break: clone;
+}
+
+/* highlight.js blocks: the black background is on <code>, the theme's drop shadow on <pre>; round both */
+.reveal pre,
+.reveal pre code {
+  border-radius: 0.5em;
+}
+
+.reveal pre code {
+  padding: 0.8em 1em;
+}
